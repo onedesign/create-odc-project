@@ -1,12 +1,11 @@
 {
-  "name": "create-odc-project",
+  "name": "@flynnt/create-odc-project",
   "version": "1.0.0",
   "description": "A Node command line tool for scaffolding common ODC projects",
   "main": "dist/cli.js",
   "type": "module",
   "bin": {
     "@flynnt/create-odc-project": "bin/create-odc-project.js",
-    "create-odc-project": "bin/create-odc-project.js"
   },
   "files": [
     "dist",
