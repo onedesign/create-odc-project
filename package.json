@@ -8,10 +8,22 @@
     "@flynnt/create-odc-project": "bin/create-odc-project.js",
     "create-odc-project": "bin/create-odc-project.js"
   },
+  "files": [
+    "dist",
+    "templates"
+  ],
   "scripts": {
     "build": "rollup -c rollup.config.js",
     "dev": "rollup -c rollup.config.js --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/onedesign/create-odc-project.git"
+  },
+  "homepage": "https://github.com/onedesign/create-odc-project.git#readme",
+  "bugs": {
+    "url": "https://github.com/onedesign/create-odc-project.git/issues"
   },
   "keywords": [
     "cli",
