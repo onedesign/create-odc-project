@@ -24,7 +24,7 @@ async function generateOptionPrompts(options: RawOptions): Promise<Options> {
       type: 'list',
       name: 'template',
       message: 'Please choose a project base.',
-      choices: [{ name: 'CraftCMS JS', value: 'craftcms-js' }],
+      choices: [{ name: 'CraftCMS (JavaScript)', value: 'craftcms-js' }],
       default: defaultOptions.template,
     });
   }
