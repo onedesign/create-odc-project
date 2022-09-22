@@ -9,7 +9,7 @@ The tool is meant to be extensible and can support the addition of multiple proj
 ## Quick Start
 To use the installation wizard (recommended):
 
-`npx create-odc-project`
+`npx @flynnt/create-odc-project`
 
 ## Command Line Usage with Options
 `npx create-odc-project [projectTemplate<String>] [-g|--git <Boolean>] [-i|--install <Boolean>]`
