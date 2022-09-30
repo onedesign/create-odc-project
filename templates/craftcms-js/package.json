@@ -20,8 +20,10 @@
   "homepage": "https://github.com/onedesign/craft-starter/blob/main/README.md",
   "devDependencies": {
     "@babel/eslint-parser": "^7.19.1",
+    "@rollup/plugin-eslint": "^8.0.2",
     "autoprefixer": "^10.4.12",
     "eslint": "^8.24.0",
+    "eslint-plugin-compat": "^4.0.2",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.2.1",
     "prettier": "^2.7.1",
@@ -31,5 +33,10 @@
     "vite-plugin-craftcms": "^1.0.0-7",
     "vite-plugin-mkcert": "1.9.0",
     "vite-plugin-restart": "^0.2.0"
-  }
+  },
+  "browserslist": [
+    "defaults",
+    "not op_mini all",
+    "not kaios >= 2.5"
+  ]
 }
