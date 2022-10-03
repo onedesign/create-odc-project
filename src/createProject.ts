@@ -6,6 +6,7 @@ import { fileURLToPath } from 'url';
 import copyTemplateFiles from './tasks/copyTemplateFiles';
 import initGitRepo from './tasks/initGitRepo';
 import installNodePackages from './tasks/installNodePackages';
+import renameGitignore from './tasks/renameGitignore';
 
 import type { Options } from './types';
 
@@ -22,6 +23,10 @@ async function createProject(options: Options) {
     {
       title: 'Copy Project Files',
       task: () => copyTemplateFiles(templateDirectory, targetDirectory),
+    },
+    {
+      title: 'Rename .gitignore File',
+      task: () => renameGitignore(targetDirectory),
     },
     {
       title: 'Initialize Git',
