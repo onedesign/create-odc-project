@@ -3,15 +3,6 @@
 Thumbs.db
 .eslintcache
 
-# CRAFT
-/app/cpresources/
-/app/storage/config-backups/
-/app/storage/config-backups/*
-/app/storage/composer-backups/
-/app/storage/config-deltas/
-/app/storage/config-deltas/*
-
-
 # BUILD FILES
 /node_modules
 /yarn-error.log
@@ -39,7 +30,3 @@ app/web/dist
 .vscode
 config.codekit3
 prepros-6.config
-
-# BLITZ CACHING
-/app/web/cache/
-/app/web/cache/*
