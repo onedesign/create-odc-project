@@ -7,6 +7,7 @@ import copyTemplateFiles from './tasks/copyTemplateFiles';
 import initGitRepo from './tasks/initGitRepo';
 import installNodePackages from './tasks/installNodePackages';
 import renameGitignore from './tasks/renameGitignore';
+import renameVitePartial from './tasks/renameVitePartial';
 
 import type { Options } from './types';
 
@@ -27,6 +28,11 @@ async function createProject(options: Options) {
     {
       title: 'Rename .gitignore File',
       task: () => renameGitignore(targetDirectory),
+    },
+    {
+      title: 'Rename Vite Partial',
+      task: () =>
+        renameVitePartial(`${targetDirectory}/app/templates/_partials`),
     },
     {
       title: 'Initialize Git',
