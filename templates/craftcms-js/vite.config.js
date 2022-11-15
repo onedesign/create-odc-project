@@ -2,7 +2,6 @@ import { vitePluginCraftCms } from 'vite-plugin-craftcms';
 import { defineConfig, loadEnv } from 'vite';
 import eslint from '@rollup/plugin-eslint';
 import viteRestart from 'vite-plugin-restart';
-import mkcert from 'vite-plugin-mkcert';
 
 // https://vitejs.dev/config/
 export default defineConfig(({ command, mode }) => {
@@ -12,11 +11,10 @@ export default defineConfig(({ command, mode }) => {
     base: command === 'serve' ? '' : '/dist/',
     publicDir: './src/static',
     server: {
-      port: process.env.VITE_DEV_PORT || 3000,
-      host: true,
-      hmr: {
-        host: 'localhost',
-      },
+      origin: `https://${process.env.DDEV_HOSTNAME}:3000`,
+      port: 3000,
+      host: '0.0.0.0',
+      strictPort: true,
     },
     build: {
       emptyOutDir: true,
@@ -33,7 +31,6 @@ export default defineConfig(({ command, mode }) => {
       },
     },
     plugins: [
-      mkcert(),
       vitePluginCraftCms({
         outputFile: './app/templates/_partials/vite.twig',
       }),
