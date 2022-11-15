@@ -43,7 +43,7 @@ This project is meant to run on DDEV, and that is the officially supported metho
 2. Copy `app/.env.example.dev` to `app/.env`.
 3. Run `ddev describe` and make note of the database connection information as well as primary site url.
 4. Fill out the appropriate values in the `.env` file. Sensitive data should be stored in a 1Password entry related to the project.
-5. Import a database by running `ddev import-db --src=[full-path-to-your-db]` (note: this command will drop any existing database).
+5. Import a database by running `ddev import-db --src="full/path/to/your/db"` (note: this command will drop any existing database).
 6. Install Composer dependencies: `ddev composer install`.
 7. Install front end dependencies: `ddev npm install`.
 8. Verify the front end build: `ddev npm run build`.
