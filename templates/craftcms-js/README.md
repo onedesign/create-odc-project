@@ -4,13 +4,17 @@ This is a starter project for Craft 4 projects at [One Design Company](https://o
 
 Local development is handled by DDEV, which means that the Craft application and its related services run inside of Docker containers provided by DDEV. For consistency and in order to avoid using binaries at different versions than the application requires, it is recommended that you run all project commands from within the DDEV containers.
 
-DDEV provides wrappers for most things you will need, so you do not actually have to `ssh` into the container to run things. Examples:
+DDEV provides wrappers for most things you will need (including the `craft` command), so you do not actually have to `ssh` into the container to run things. Examples:
 
 `ddev composer require foo/bar`
 
 `ddev npm install`
 
 `ddev npm run start`
+
+`ddev craft project-config/apply`
+
+`ddev craft plugin/enable imager-x`
 
 ## Requirements for Local Development
 - [Docker](https://www.docker.com/)
