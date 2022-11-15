@@ -8,6 +8,10 @@
     "build": "vite build",
     "lint": "eslint ./src --fix"
   },
+  "engines": {
+    "node": ">= 16.17.1",
+    "npm": ">= 8.15.0"
+  },
   "repository": {
     "type": "git",
     "url": "git@github.com:onedesign/craft-starter.git"
