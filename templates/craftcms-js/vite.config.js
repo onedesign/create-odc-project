@@ -1,3 +1,6 @@
+const path = require('path');
+import * as dotenv from 'dotenv';
+dotenv.config({ path: path.resolve(process.cwd(), 'app/.env') });
 import { vitePluginCraftCms } from 'vite-plugin-craftcms';
 import { defineConfig, loadEnv } from 'vite';
 import eslint from '@rollup/plugin-eslint';
@@ -6,12 +9,15 @@ import viteRestart from 'vite-plugin-restart';
 // https://vitejs.dev/config/
 export default defineConfig(({ command, mode }) => {
   process.env = { ...process.env, ...loadEnv(mode, process.cwd()) };
+  const serverOrigin = process.env.PRIMARY_SITE_URL.endsWith('/')
+    ? process.env.PRIMARY_SITE_URL.slice(0, -1)
+    : process.env.PRIMARY_SITE_URL;
 
   return {
     base: command === 'serve' ? '' : '/dist/',
     publicDir: './src/static',
     server: {
-      origin: `https://${process.env.DDEV_HOSTNAME}:3000`,
+      origin: `${serverOrigin}:3000`,
       port: 3000,
       host: '0.0.0.0',
       strictPort: true,
