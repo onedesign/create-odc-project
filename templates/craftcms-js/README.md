@@ -54,6 +54,9 @@ This project is meant to run on DDEV, and that is the officially supported metho
 2. `ddev npm run start`
 3. `ddev launch`
 
+### Production Configuration
+This project template comes with an `.htaccess` file that contains updates and optimizations for One Design Craft CMS projects. Once you have a production domain for you project, go into this file and update all the places where `yourproject.com` appears with the actual production domain.
+
 ## Common Pitfalls
 ### The Vite Server Doesn't Work
 Vite uses `esbuild` under the hood, and that compiles differently based on the system architecture of where it was installed. If you ran `npm install` outside of DDEV, then `ddev npm run start` will not work, because the container expects to be working with a version of `esbuild` that was installed from within the container.
