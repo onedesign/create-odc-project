@@ -1,11 +1,14 @@
+import getModuleOptions from './utilities/getModuleOptions';
 import ModuleManifest from './ModuleManifest';
 
 export default class App {
-  static defaults = {
-    moduleAttribute: 'data-module',
-    optionsAttribute: 'data-module-options',
-  };
-
+  static moduleAttribute = 'data-module';
+  static optionsAttribute = 'data-module-options';
+  /**
+   * @param {HTMLElement} scope
+   * @param {Object} config
+   * @returns {App}
+   */
   constructor(scope = document.documentElement, config = {}) {
     this.config = { ...App.defaults, ...config };
     this.registerModules(scope);
@@ -18,33 +21,19 @@ export default class App {
    * and initialize each module if it exists in the `ModuleManifest` object.
    *
    * @param {HTMLElement} scope
+   * @returns void
    */
   registerModules(scope) {
-    const modules = scope.querySelectorAll(`[${this.config.moduleAttribute}]`);
+    const modules = scope.querySelectorAll(`[${App.moduleAttribute}]`);
 
     modules.forEach(module => {
-      const name = module.getAttribute(this.config.moduleAttribute);
-      let options;
-      try {
-        options = JSON.parse(module.getAttribute(this.config.optionsAttribute));
-      } catch (error) {
-        // eslint-disable-next-line no-console
-        console.error(
-          `Error parsing module options for module ${name}: ${error}`
-        );
-      }
-
+      const name = module.getAttribute(App.moduleAttribute);
       if (!ModuleManifest[name]) {
-        // eslint-disable-next-line no-console
-        console.error(
-          `Module "${name}" does not exist in the manifest. Did you forget to add it?`
-        );
         return;
       }
 
       const Constructor = ModuleManifest[name];
-      // eslint-disable-next-line no-new
-      new Constructor(module, options);
+      new Constructor(module, getModuleOptions(module));
     });
   }
 }
