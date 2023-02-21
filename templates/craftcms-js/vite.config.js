@@ -9,15 +9,18 @@ import viteRestart from 'vite-plugin-restart';
 // https://vitejs.dev/config/
 export default defineConfig(({ command, mode }) => {
   process.env = { ...process.env, ...loadEnv(mode, process.cwd()) };
-  const serverOrigin = process.env.PRIMARY_SITE_URL.endsWith('/')
-    ? process.env.PRIMARY_SITE_URL.slice(0, -1)
-    : process.env.PRIMARY_SITE_URL;
+  let serverOrigin;
+  if (process.env.PRIMARY_SITE_URL) {
+    serverOrigin = process.env.PRIMARY_SITE_URL.endsWith('/')
+      ? process.env.PRIMARY_SITE_URL.slice(0, -1)
+      : process.env.PRIMARY_SITE_URL;
+  }
 
   return {
     base: command === 'serve' ? '' : '/dist/',
     publicDir: './src/static',
     server: {
-      origin: `${serverOrigin}:3000`,
+      origin: serverOrigin ? `${serverOrigin}:3000` : 'localhost',
       port: 3000,
       host: '0.0.0.0',
       strictPort: true,
