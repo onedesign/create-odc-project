@@ -24,7 +24,7 @@
   "homepage": "https://github.com/onedesign/craft-starter/blob/main/README.md",
   "devDependencies": {
     "@babel/eslint-parser": "^7.19.1",
-    "@rollup/plugin-eslint": "^8.0.2",
+    "@rollup/plugin-eslint": "^9.0.3",
     "autoprefixer": "^10.4.12",
     "dotenv": "^16.0.3",
     "eslint": "^8.24.0",
