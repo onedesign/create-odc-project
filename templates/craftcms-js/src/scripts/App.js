@@ -54,6 +54,7 @@ export default class App {
             this.initModule(Module, element);
           })
           .catch(error => {
+            // eslint-disable-next-line no-console
             console.error(`Error importing module "${name}"`, { error });
           });
 
@@ -91,6 +92,7 @@ export default class App {
         options = JSON.parse(optionString);
       } catch (error) {
         const name = element.getAttribute(App.Attributes.MODULE);
+        // eslint-disable-next-line no-console
         console.error(`Error parsing module options for "${name}"`, {
           error,
           options: optionString,
