@@ -33,26 +33,31 @@ export default class App {
    * @returns {void}
    */
   registerModules() {
-    const allElements = this.options.scope.querySelectorAll(`[${App.Attributes.MODULE}]`);
+    const allElements = this.options.scope.querySelectorAll(
+      `[${App.Attributes.MODULE}]`
+    );
 
-    allElements.forEach((element) => {
+    allElements.forEach(element => {
       const name = element.getAttribute(App.Attributes.MODULE);
 
       // Initial modules are already imported and can be initialized now.
       if (this.options.InitialModules[name]) {
         this.initModule(this.options.InitialModules[name], element);
+
         return;
       }
 
       // If this module is in the dynamic manifest, import and initialize it.
       if (this.options.DynamicModules.includes(name)) {
-        import(`./modules/${name}`)
+        import(`./modules/${name}.js`)
           .then(({ default: Module }) => {
             this.initModule(Module, element);
           })
           .catch(error => {
             console.error(`Error importing module "${name}"`, { error });
           });
+
+        return;
       }
 
       // eslint-disable-next-line no-console
