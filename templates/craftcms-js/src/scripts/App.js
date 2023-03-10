@@ -1,6 +1,8 @@
 export default class App {
-  static moduleAttribute = 'data-module';
-  static optionsAttribute = 'data-module-options';
+  static Attributes = {
+    MODULE: 'data-module',
+    MODULE_OPTIONS: 'data-module-options',
+  };
 
   static defaults = {
     DynamicModules: [],
@@ -31,10 +33,10 @@ export default class App {
    * @returns {void}
    */
   registerModules() {
-    const allElements = this.options.scope.querySelectorAll(`[${App.moduleAttribute}]`);
+    const allElements = this.options.scope.querySelectorAll(`[${App.Attributes.MODULE}]`);
 
     allElements.forEach((element) => {
-      const name = element.getAttribute(App.moduleAttribute);
+      const name = element.getAttribute(App.Attributes.MODULE);
 
       // Initial modules are already imported and can be initialized now.
       if (this.options.InitialModules[name]) {
@@ -77,13 +79,13 @@ export default class App {
   getModuleOptions(element) {
     let options = {};
 
-    if (element.hasAttribute(App.optionsAttribute)) {
-      const optionString = element.getAttribute(App.optionsAttribute);
+    if (element.hasAttribute(App.Attributes.MODULE_OPTIONS)) {
+      const optionString = element.getAttribute(App.Attributes.MODULE_OPTIONS);
 
       try {
         options = JSON.parse(optionString);
       } catch (error) {
-        const name = element.getAttribute(App.moduleAttribute);
+        const name = element.getAttribute(App.Attributes.MODULE);
         console.error(`Error parsing module options for "${name}"`, {
           error,
           options: optionString,
