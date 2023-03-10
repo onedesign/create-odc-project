@@ -52,6 +52,11 @@ export default class App {
             console.error(`Error importing module "${name}"`, { error });
           });
       }
+
+      // eslint-disable-next-line no-console
+      console.error(
+        `Module "${name}" is not in the App manifest. Did you forget to add it?`
+      );
     });
   }
 
