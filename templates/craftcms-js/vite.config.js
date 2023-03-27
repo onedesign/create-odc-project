@@ -18,6 +18,9 @@ export default defineConfig(({ command, mode }) => {
 
   return {
     base: command === 'serve' ? '' : '/dist/',
+    css: {
+      devSourcemap: true,
+    },
     publicDir: './src/static',
     server: {
       origin: serverOrigin ? `${serverOrigin}:3000` : 'localhost',

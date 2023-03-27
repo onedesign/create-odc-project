@@ -1,7 +1,7 @@
 const defaultTheme = require('tailwindcss/defaultTheme');
 
 const fontFamily = {
-  sans: ['Fira Code', ...defaultTheme.fontFamily.sans],
+  mono: ['Fira Code', ...defaultTheme.fontFamily.mono],
 };
 
 module.exports = fontFamily;
