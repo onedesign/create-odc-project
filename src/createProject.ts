@@ -6,6 +6,7 @@ import { fileURLToPath } from 'url';
 import copyTemplateFiles from './tasks/copyTemplateFiles';
 import initGitRepo from './tasks/initGitRepo';
 import installNodePackages from './tasks/installNodePackages';
+import removeInitialConfig from './tasks/removeInitialConfig';
 import renameGitignore from './tasks/renameGitignore';
 import renameVitePartial from './tasks/renameVitePartial';
 
@@ -24,6 +25,11 @@ async function createProject(options: Options) {
       title: 'Copy Base Project Files',
       task: () =>
         copyTemplateFiles(`${templateDirectory}/craftcms-js/`, targetDirectory),
+    },
+    {
+      title: 'Removing Initial Project Config.',
+      enabled: () => options.template === 'newco',
+      task: () => removeInitialConfig(targetDirectory),
     },
     {
       title: 'Copy NewCo Project Files',
