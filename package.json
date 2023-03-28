@@ -5,8 +5,7 @@
   "main": "dist/cli.js",
   "type": "module",
   "bin": {
-    "@flynnt/create-odc-project": "bin/create-odc-project.js",
-    "create-odc-project": "bin/create-odc-project.js"
+    "@flynnt/create-odc-project": "bin/create-odc-project.js"
   },
   "files": [
     "dist",
