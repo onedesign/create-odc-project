@@ -1,4 +1,4 @@
-dateModified: 1679692894
+dateModified: 1680019565
 elementSources:
   craft\elements\Entry:
     -
@@ -444,11 +444,6 @@ plugins:
     edition: standard
     enabled: true
     schemaVersion: 1.0.0
-  vizy:
-    edition: standard
-    enabled: true
-    licenseKey: KVUPYL2FB3ISOHHFNV37SAPU
-    schemaVersion: 0.9.0
 system:
   edition: pro
   live: true
