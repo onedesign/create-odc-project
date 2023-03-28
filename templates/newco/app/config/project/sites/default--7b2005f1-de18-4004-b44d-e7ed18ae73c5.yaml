@@ -1,0 +1,8 @@
+baseUrl: $PRIMARY_SITE_URL
+handle: default
+hasUrls: true
+language: en-us
+name: 'ODC Lean Starter'
+primary: true
+siteGroup: 38316d6a-1279-411b-9ba7-efc6af5ef122 # ODC Lean Starter
+sortOrder: 1

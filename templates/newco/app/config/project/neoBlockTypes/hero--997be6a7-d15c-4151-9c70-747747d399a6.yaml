@@ -1,0 +1,88 @@
+childBlocks:
+  - textStack
+conditions: null
+description: ''
+enabled: true
+field: 15d9d7cd-ae8a-4ffe-b697-1e53a28b1a9e # Page Content
+fieldLayouts:
+  e4e33e4e-c5db-4ede-9860-7c11aacc52c1:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: fee9df4a-f8dd-4224-a1e2-a58995ca105c # Hero Media
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: e94797d4-f555-4cc4-9fc0-f920679bbe17
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            type: benf\neo\fieldlayoutelements\ChildBlocksUiElement
+            uid: 1c9c3540-fed0-4ed2-bc21-10a7df526087
+            userCondition: null
+        name: Content
+        uid: 6e009c77-b51f-4b42-aaad-615b41271c41
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: b2037343-3108-472d-bcec-61e3d491b7c6 # Horizontal Alignment
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 2ffeea22-4314-421c-ae7d-4469784bf172
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: fce9ece3-6186-4f7b-b659-567b1b8e395e # Vertical Alignment
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 916c4b6f-0fd3-4fbf-a23b-a7f386e0a83b
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 55c3d4ea-508a-40f6-8a54-bab49bb2a385 # Text Alignment
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 95d9779b-f12d-4ccd-a5d8-92b35585d839
+            userCondition: null
+            warning: null
+            width: 100
+        name: Configuration
+        uid: 145f58eb-80c6-4adb-9677-f2d93a9b0107
+        userCondition: null
+group: null
+groupChildBlockTypes: true
+handle: hero
+icon: null
+ignorePermissions: true
+maxBlocks: 0
+maxChildBlocks: 1
+maxSiblingBlocks: 0
+minBlocks: 0
+minChildBlocks: 0
+minSiblingBlocks: 0
+name: Hero
+sortOrder: 2
+topLevel: false

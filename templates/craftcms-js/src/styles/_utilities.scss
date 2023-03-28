@@ -1,0 +1,18 @@
+@layer utilities {}
+
+// These are outside @utilities because we don't actually reference these
+// classes in our own scripts or templates, so Tailwind won't compile them.
+// This is better than a safelist and better than pointing Tailwind at one
+// file in node_modules.
+.lazyload,
+.lazyloading {
+  @apply transition-opacity;
+  @apply duration-300;
+  @apply opacity-0;
+}
+
+.lazyloaded {
+  @apply transition-opacity;
+  @apply duration-300;
+  @apply opacity-100;
+}

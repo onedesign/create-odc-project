@@ -1,0 +1,12 @@
+columnSuffix: tjqwrbek
+contentColumnType: string
+fieldGroup: 478acdb5-bf2a-426f-8001-9111e1b6ebaf # Common
+handle: email
+instructions: null
+name: Email
+searchable: false
+settings:
+  placeholder: null
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Email

@@ -1,0 +1,33 @@
+childBlocks:
+  - textStack
+  - formReference
+conditions:
+  craft\elements\Entry:
+    class: craft\elements\conditions\entries\EntryCondition
+    conditionRules:
+      -
+        class: craft\elements\conditions\entries\TypeConditionRule
+        operator: in
+        uid: b8ab9ab3-7117-4efc-b5f2-ae648806a9a4
+        values:
+          - d82c7088-6f34-408c-ba32-30216d175651 # Home
+          - 533ac4b8-6a49-4621-8fb6-0ee5e6c5751d # Default
+    elementType: craft\elements\Entry
+    fieldContext: global
+description: ''
+enabled: true
+field: 15d9d7cd-ae8a-4ffe-b697-1e53a28b1a9e # Page Content
+group: null
+groupChildBlockTypes: true
+handle: contact
+icon: null
+ignorePermissions: true
+maxBlocks: 0
+maxChildBlocks: 0
+maxSiblingBlocks: 0
+minBlocks: 0
+minChildBlocks: 0
+minSiblingBlocks: 0
+name: Contact
+sortOrder: 4
+topLevel: false

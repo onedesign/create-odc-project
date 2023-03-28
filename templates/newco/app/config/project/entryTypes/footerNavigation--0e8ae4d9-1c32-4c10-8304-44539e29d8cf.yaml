@@ -1,0 +1,29 @@
+fieldLayouts:
+  417ee19d-3015-4870-85c4-5aedff90d037:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: d00f7180-438e-4451-88c7-549b39239125 # Footer Navigation
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: d8411940-167d-43b9-9249-fe92e08fa4ef
+            userCondition: null
+            warning: null
+            width: 100
+        name: Settings
+        uid: 2a0caf22-b943-4fce-9e99-9849cefb4c15
+        userCondition: null
+handle: footerNavigation
+hasTitleField: false
+name: 'Footer Navigation'
+section: 312797a8-7d21-4043-a321-e10afb5b81c8 # Footer Navigation
+sortOrder: 1
+titleFormat: '{section.name|raw}'
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

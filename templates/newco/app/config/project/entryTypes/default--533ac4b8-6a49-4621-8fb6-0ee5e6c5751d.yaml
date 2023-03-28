@@ -1,0 +1,73 @@
+fieldLayouts:
+  041b6741-3a32-4194-820e-f9f763e8873a:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            elementCondition: null
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: 16e216de-5e0d-4710-adb4-194134b71447
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 15d9d7cd-ae8a-4ffe-b697-1e53a28b1a9e # Page Content
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: edabb767-995c-4ad4-a27b-f0e801d05acb
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: c504da44-cd8b-4daa-927b-ec7fd75a2b51
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: 67fd8ee8-edc0-4bdf-8090-281a0024761d # SEO
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: f9b3c082-6048-45d3-b8a2-263dc7af7a19
+            userCondition: null
+            warning: null
+            width: 100
+        name: SEO
+        uid: 561726d8-f82d-4aed-882a-489a3ab94ce5
+        userCondition: null
+handle: default
+hasTitleField: true
+name: Default
+section: afd40964-7a14-497f-b9cc-5b3c76740fd4 # Pages
+sortOrder: 1
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

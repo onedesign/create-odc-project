@@ -1,0 +1,17 @@
+columnSuffix: hjybitsg
+contentColumnType: datetime
+fieldGroup: 09af1b3a-3b1a-4ef4-8d8b-764cf7f18532 # News
+handle: publicationDate
+instructions: null
+name: 'Publication Date'
+searchable: false
+settings:
+  max: null
+  min: null
+  minuteIncrement: 30
+  showDate: true
+  showTime: false
+  showTimeZone: false
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Date

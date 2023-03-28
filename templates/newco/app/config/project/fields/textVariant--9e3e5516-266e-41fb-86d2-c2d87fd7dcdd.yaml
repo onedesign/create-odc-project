@@ -1,0 +1,166 @@
+columnSuffix: wfhuhcfv
+contentColumnType: string
+fieldGroup: 478acdb5-bf2a-426f-8001-9111e1b6ebaf # Common
+handle: textVariant
+instructions: null
+name: 'Text Variant'
+searchable: false
+settings:
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - sm
+        -
+          - value
+          - sm
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - base
+        -
+          - value
+          - base
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - lg
+        -
+          - value
+          - lg
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - xl
+        -
+          - value
+          - xl
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 2xl
+        -
+          - value
+          - 2xl
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 3xl
+        -
+          - value
+          - 3xl
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 4xl
+        -
+          - value
+          - 4xl
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 5xl
+        -
+          - value
+          - 5xl
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 6xl
+        -
+          - value
+          - 6xl
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 7xl
+        -
+          - value
+          - 7xl
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 8xl
+        -
+          - value
+          - 8xl
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 9xl
+        -
+          - value
+          - 9xl
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Eyebrow
+        -
+          - value
+          - eyebrow
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Visually Hidden'
+        -
+          - value
+          - sr-only
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Dropdown

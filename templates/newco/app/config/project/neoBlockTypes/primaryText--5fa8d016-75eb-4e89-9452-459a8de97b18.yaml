@@ -1,0 +1,64 @@
+childBlocks: null
+conditions: null
+description: ''
+enabled: true
+field: 15d9d7cd-ae8a-4ffe-b697-1e53a28b1a9e # Page Content
+fieldLayouts:
+  2ddacb2e-93ed-44c0-b88a-a280839bab3d:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: 012aad9f-4a4f-4938-a934-87afc923743f # HTML Element
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: b23bc040-e3a7-4ffb-ae0c-50e246448486
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 9e3e5516-266e-41fb-86d2-c2d87fd7dcdd # Text Variant
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 722a795f-39a9-4df2-82fa-bf9cf23ed227
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: e2bbfda7-9974-4d33-8bb9-39ce5900163e # Rich Text Simple
+            instructions: null
+            label: 'Text Content'
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: e2ffb5f8-582c-4c56-9149-0d9680af8402
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: 1cf90460-f712-4dda-a267-5970de0f91e5
+        userCondition: null
+group: null
+groupChildBlockTypes: true
+handle: primaryText
+icon: null
+ignorePermissions: true
+maxBlocks: 0
+maxChildBlocks: 0
+maxSiblingBlocks: 0
+minBlocks: 0
+minChildBlocks: 0
+minSiblingBlocks: 0
+name: 'Primary Text'
+sortOrder: 13
+topLevel: false

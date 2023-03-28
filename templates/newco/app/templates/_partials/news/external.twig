@@ -1,0 +1,16 @@
+<article>
+  {% if item.articleLink %}
+    <a{{ item.articleLink.getLinkAttributes() }}>
+      {{ item.title | typogrify(true) }}
+    </a>
+  {% endif %}
+
+  <div>
+    {% if item.publicationName %}
+      <div>{{ item.publicationName }}</div>
+    {% endif %}
+    {% if item.publicationDate %}
+      <time datetime="{{ item.publicationDate | date('o-m-d') }}">{{ item.publicationDate | date('m/d/Y') }}</time>
+    {% endif %}
+  </div>
+</article>

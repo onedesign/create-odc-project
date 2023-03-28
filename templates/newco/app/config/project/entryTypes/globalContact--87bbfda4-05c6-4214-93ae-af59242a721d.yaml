@@ -1,0 +1,65 @@
+fieldLayouts:
+  07e21d3a-b2e8-47cf-b572-09437913db9f:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: b72a2b9e-46cd-4656-acd6-18b9dfc5fe5a # Address
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: ff6a85c1-4d9c-45bd-af5b-ba6a1e124490
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 5484724d-dabb-498b-afc5-1240dc13e768 # Email
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: b863964b-0a45-4499-b903-9089148daefd
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 1e050e3c-5e8a-46ce-90eb-029c23ee5edd # Telephone
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 8a1a98ce-b67c-4e5e-952b-7e6b4f0b2b1d
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 40d07393-8258-4bcc-85e5-52abc4a0f37f # Social Links
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: b55b8b18-4dd1-4e80-b290-888d0a8e4e36
+            userCondition: null
+            warning: null
+            width: 100
+        name: Settings
+        uid: 759a6608-57a8-49b4-9391-02e86291431f
+        userCondition: null
+handle: globalContact
+hasTitleField: false
+name: 'Global Contact'
+section: 4162fae7-fcbb-4f90-b092-5beb4c414aa9 # Global Contact
+sortOrder: 1
+titleFormat: '{section.name|raw}'
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

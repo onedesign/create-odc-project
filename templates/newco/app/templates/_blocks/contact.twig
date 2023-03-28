@@ -1,0 +1,10 @@
+{# Output #}
+{% set childBlocks = block.children.collect() %}
+
+{% if childBlocks | length %}
+  <div class="[{{ block.type.handle }}] space-y-10">
+    {% for childBlock in childBlocks %}
+      {% include  '_blocks/' ~ childBlock.type ignore missing with { block: childBlock } only %}
+    {% endfor %}
+  </div>
+{% endif %}

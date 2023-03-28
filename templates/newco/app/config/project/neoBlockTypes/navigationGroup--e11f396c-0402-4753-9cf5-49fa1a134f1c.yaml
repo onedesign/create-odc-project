@@ -1,0 +1,52 @@
+childBlocks: null
+conditions: null
+description: ''
+enabled: true
+field: d00f7180-438e-4451-88c7-549b39239125 # Footer Navigation
+fieldLayouts:
+  f4732e7b-8d21-470c-aee6-73ef4298a37f:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: 17b1272f-f374-4f05-9e0e-c8bb27b51854 # Plain Text
+            instructions: 'Optional label for this set of links'
+            label: Label
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 84d71632-bf3a-49c8-a75a-4c5e23400e6f
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: cb22d843-e137-4dd1-8d5d-1e606ab4d6c5 # Navigation
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 7b0509d6-2b41-4139-8c48-d50d9bda347d
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: 4648aa8b-c112-41ea-b8af-7b0b59b6b8b1
+        userCondition: null
+group: null
+groupChildBlockTypes: true
+handle: navigationGroup
+icon: null
+ignorePermissions: true
+maxBlocks: 0
+maxChildBlocks: 0
+maxSiblingBlocks: 0
+minBlocks: 0
+minChildBlocks: 0
+minSiblingBlocks: 0
+name: 'Navigation Group'
+sortOrder: 1
+topLevel: true

@@ -1,0 +1,19 @@
+columnSuffix: tlylotxb
+contentColumnType: text
+fieldGroup: 3ecee518-f3cf-4e25-a61c-94abb7eba772 # Page
+handle: sectionId
+instructions: null
+name: 'Section ID'
+searchable: false
+settings:
+  byteLimit: null
+  charLimit: null
+  code: false
+  columnType: null
+  initialRows: 4
+  multiline: false
+  placeholder: null
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

@@ -1,0 +1,150 @@
+{# =============================================================================
+Prose - For rendering complex blocks of text like prose with mutliple
+paragraphs and inline elements like <ul>, <ol>, etc.
+
+Params:
+- html: The html to be rendered.
+- size: A string representing a size respected by the Tailwind typography
+  plugin ('sm', 'base', 'lg', '2xl). Defaults to 'base'.
+- config: An attributes object. If present, the `class` key will be merged with
+  the component's default classes. All other keys will be added as attributes
+  to the HTML element that is returned.
+Usage:
+{% from "_macros/text" import prose %}
+{{ prose(html = '', size = '', { class: 'baz', data-foo:'bar' }) }}
+============================================================================= #}
+{% macro prose(html = '', size = 'base', attributes = {}) %}
+
+  {% set cssClasses = ['prose'] %}
+
+  {% switch size %}
+    {% case 'sm' %}
+      {% set cssClasses = cssClasses | merge([
+        'prose-sm',
+      ]) %}
+    {% case 'base' %}
+      {% set cssClasses = cssClasses | merge([
+        'prose-base',
+      ]) %}
+    {% case 'lg' %}
+      {% set cssClasses = cssClasses | merge([
+        'prose-lg',
+      ]) %}
+    {% case 'xl' %}
+      {% set cssClasses = cssClasses | merge([
+        'prose-xl',
+      ]) %}
+    {% case '2xl' %}
+      {% set cssClasses = cssClasses | merge([
+        'prose-2xl',
+      ]) %}
+  {% endswitch %}
+
+  {% if attributes.class is defined %}
+    {% set cssClasses = cssClasses | merge(attributes.class | split(' ')) %}
+  {% endif %}
+
+  {% set attributes = attributes | merge({
+    class: cssClasses | join(' '),
+    html: html | typogrify,
+  }) %}
+
+  {# Return: #}
+  {{ tag('div', attributes) }}
+{% endmacro %}
+
+{# =============================================================================
+Text - For rendering simple blocks of text.
+
+Params:
+- field: An instance of a primaryText Matrix field.
+- config: An attributes object. If present, the `class` key will be merged with
+  the component's default classes. All other keys will be added as attributes
+  to the HTML element that is returned.
+Usage:
+{% from "_macros/text" import text %}
+
+{{ text(field, { class: 'baz', data-foo:'bar' }) }}
+============================================================================= #}
+{% macro text(field, config = {}) %}
+  {% set attributes = {} %}
+  {% set cssClasses = [] %}
+  {% set field = field ?? null %}
+
+  {% if field %}
+    {% set text = field.richText | striptags('<em><i><br>') %}
+    {% switch field.textVariant.value %}
+    {% case 'sm' %}
+      {% set cssClasses = cssClasses | merge([
+        'text-sm',
+      ]) %}
+    {% case 'base' %}
+      {% set cssClasses = cssClasses | merge([
+        'text-base',
+      ]) %}
+    {% case 'eyebrow' %}
+      {% set cssClasses = cssClasses | merge([
+        'text-sm',
+      ]) %}
+    {% case 'lg' %}
+      {% set cssClasses = cssClasses | merge([
+        'text-lg',
+      ]) %}
+    {% case 'xl' %}
+      {% set cssClasses = cssClasses | merge([
+        'text-xl',
+      ]) %}
+    {% case '2xl' %}
+      {% set cssClasses = cssClasses | merge([
+        'text-2xl',
+      ]) %}
+    {% case '3xl' %}
+      {% set cssClasses = cssClasses | merge([
+        'text-3xl',
+      ]) %}
+    {% case '4xl' %}
+      {% set cssClasses = cssClasses | merge([
+        'text-4xl',
+      ]) %}
+    {% case '5xl' %}
+      {% set cssClasses = cssClasses | merge([
+        'text-5xl',
+      ]) %}
+    {% case '6xl' %}
+      {% set cssClasses = cssClasses | merge([
+        'text-6xl',
+      ]) %}
+    {% case '7xl' %}
+      {% set cssClasses = cssClasses | merge([
+        'text-7xl',
+      ]) %}
+    {% case '8xl' %}
+      {% set cssClasses = cssClasses | merge([
+        'text-8xl',
+      ]) %}
+    {% case '9xl' %}
+      {% set cssClasses = cssClasses | merge([
+        'text-9xl',
+      ]) %}
+    {% case 'sr-only' %}
+      {% set cssClasses = cssClasses | merge([
+        'sr-only',
+      ]) %}
+    {% endswitch %}
+
+    {% if config.class is defined %}
+      {% set cssClasses = cssClasses | merge(config.class | split(' ')) %}
+      {% set config = config | filter((v, k) => k != 'class') %}
+    {% endif %}
+
+    {% set attributes = attributes | merge({
+      class: cssClasses | join(' '),
+      html: text,
+    }) %}
+
+    {% set attributes = attributes | merge(config) %}
+
+    {# Return: #}
+    {{ tag(field.htmlElement.value, attributes) }}
+  {% endif %}
+{% endmacro %}

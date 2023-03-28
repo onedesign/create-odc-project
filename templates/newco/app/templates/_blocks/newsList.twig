@@ -1,0 +1,14 @@
+{% set newsItems = block.newsItemReference.collect() %}
+
+{# Output #}
+{% if newsItems | length %}
+  <div class="[{{ block.type.handle }}]">
+    <ul>
+      {% for item in newsItems %}
+        <li>
+          {% include "_partials/news/" ~ item.type %}
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+{% endif %}

@@ -1,0 +1,145 @@
+{# =============================================================================
+Primary Navigation Link
+Params:
+- field: An instance of a Typed Link field.
+- config: An attributes object. If present, the `class` key will be merged with
+  the component's default classes. All other keys will be merged with the
+  HTML attributes coming from the field and applied as attributes on the
+  top-level anchor element.
+Usage:
+{% from "_macros/links" import primaryNavigationLink %}
+{{ primaryNavigationLink(field, { class: 'baz', data-foo:'bar' }) }}
+============================================================================= #}
+{% macro primaryNavigationLink(field, config = {}) %}
+  {% set cssClasses = [
+    'hover:underline',
+  ] %}
+
+  {% set attributes = field.getRawLinkAttributes() ?? {} %}
+  {% set text = field.getCustomText() %}
+
+  {% if config.class is defined %}
+    {% set cssClasses = cssClasses | merge(config.class | split(' ')) %}
+    {% set config = config | filter((v, k) => k != 'class') %}
+  {% endif %}
+
+  {% set attributes = attributes | merge({
+    class: cssClasses | join(' '),
+    text,
+  }) %}
+
+  {# Current page links #}
+  {% if attributes.href in craft.app.request.absoluteUrl %}
+    {% if attributes.aria is defined %}
+      {% set attributes = attributes | merge({
+        aria: attributes.aria | merge({ current: 'page' })
+      }) %}
+    {% else %}
+      {% set attributes = attributes | merge({
+        aria: {
+          current: 'page'
+        }
+      }) %}
+    {% endif %}
+  {% endif %}
+
+  {% set attributes = attributes | merge(config) %}
+
+  {# Return: #}
+  {{ tag('a', attributes) }}
+{% endmacro %}
+
+{# =============================================================================
+Link CTA
+Params:
+- field: An instance of a Typed Link field.
+- config: An attributes object. If present, the `class` key will be merged with
+  the component's default classes. All other keys will be merged with the
+  HTML attributes coming from the field and applied as attributes on the
+  top-level anchor element.
+- icon: String. The filename (without the file extension) of an icon located in templates/_svg
+- text: String. Used to override the text set in the Typed Link field
+- type: String. Define types and their specific classes below.
+
+Usage:
+{% from "_macros/links" import linkCta %}
+{{ linkCta(field, { class: 'baz', data-foo:'bar' }, icon = 'caret', 'inverted') }}
+============================================================================= #}
+{% macro linkCta(field, config = {}, icon = false, text = '', type = '') %}
+
+  {# Establish base classes #}
+  {% set anchorCss = [] %}
+
+  {% set iconWrapperCss = [] %}
+
+  {% set iconCss = [] %}
+
+  {% set svgCss = [] %}
+
+  {% set textCss = [] %}
+
+  {% switch type %}
+    {% case 'block-cta' %}
+      {% set anchorCss = anchorCss | merge([
+        'block',
+        'bg-gray-200',
+        'duration-300',
+        'ease-in-out',
+        'hover:bg-black',
+        'hover:text-white',
+        'hover:underline',
+        'transition-colors',
+        'p-4',
+      ]) %}
+  {% endswitch %}
+
+  {% set attributes = field.getRawLinkAttributes() ?? {} %}
+
+  {% set html %}
+    <span class="{{ textCss | join(' ') }}">
+      {%- if text -%}
+        {{ text }}
+      {%- else -%}
+        {{ field.getCustomText(field.getIntrinsicText()) }}
+      {%- endif -%}
+    </span>
+    {% if icon %}
+      <div class="{{ iconWrapperCss | join(' ') }}">
+        <span aria-hidden="true" class="{{ iconCss | join(' ') }}"></span>
+        <span class="{{ svgCss | join(' ') }}">
+          {% include '_svg/' ~ icon ~ '.svg' %}
+        </span>
+      </div>
+    {% endif %}
+  {% endset %}
+
+  {% if config.class is defined %}
+    {% set anchorCss = anchorCss | merge(config.class | split(' ')) %}
+    {% set config = config | filter((v, k) => k != 'class') %}
+  {% endif %}
+
+  {% set attributes = attributes | merge({
+    class: anchorCss | join(' '),
+    html: html,
+  }) %}
+
+  {% set attributes = attributes | merge(config) %}
+
+  {# Current page links #}
+  {% if attributes.href in craft.app.request.absoluteUrl %}
+    {% if attributes.aria is defined %}
+      {% set attributes = attributes | merge({
+        aria: attributes.aria | merge({ current: 'page' })
+      }) %}
+    {% else %}
+      {% set attributes = attributes | merge({
+        aria: {
+          current: 'page'
+        }
+      }) %}
+    {% endif %}
+  {% endif %}
+
+  {# Return: #}
+  {{ tag('a', attributes) }}
+{% endmacro %}

@@ -1,0 +1,85 @@
+{% from "_macros/images" import img %}
+
+{% set childBlocks = block.children.collect() %}
+{% set asset = block.heroMedia.one() %}
+
+{% set positionMap = {
+  'right top': {
+    x: 'justify-items-end',
+    y: 'items-start',
+  },
+  'right center': {
+    x: 'justify-items-end',
+    y: 'items-center',
+  },
+  'right bottom': {
+    x: 'justify-items-end',
+    y: 'items-end',
+  },
+  'center top': {
+    x: 'justify-items-center',
+    y: 'items-start',
+  },
+  'center center': {
+    x: 'justify-items-center',
+    y: 'items-center',
+  },
+  'center bottom': {
+    x: 'justify-items-center',
+    y: 'items-end',
+  },
+  'left top': {
+    x: 'justify-items-start',
+    y: 'items-start',
+  },
+  'left center': {
+    x: 'justify-items-start',
+    y: 'items-center',
+  },
+  'left bottom': {
+    x: 'justify-items-start',
+    y: 'items-end',
+  }
+} %}
+
+{% set position = positionMap[block.horizontalAlignment.value ~ ' ' ~ block.verticalAlignment.value] %}
+
+{% switch block.textAlignment %}
+{% case 'center' %}
+  {% set textAlignment = 'text-center' %}
+{% case 'right' %}
+  {% set textAlignment = 'text-right' %}
+{% default %}
+  {% set textAlignment = 'text-left' %}
+{% endswitch %}
+
+<div data-module="AmbientVideo" class="grid [grid-template-areas:'hero'] [&>*]:[grid-area:hero] h-[70vh] max-h-[600px] {{ position.x }} {{ position.y }}">
+  <div class="max-w-prose p-10 z-10 {{ textAlignment }}">
+    {% if childBlocks | length %}
+      {% for childBlock in childBlocks %}
+        {% include  '_blocks/' ~ childBlock.type ignore missing with { block: childBlock } only %}
+      {% endfor %}
+    {% endif %}
+  </div>
+  {% if asset | length %}
+    {% if asset.kind == 'image' %}
+      {% set transformedImageSrcset = craft.imager.transformImage(asset,
+        [{ width: 650 }, { width: 1600 }],
+        { ratio: 16/9 },
+        { fillTransforms: true }) | srcset
+      %}
+      <img
+        class="lazyload object-cover w-full h-[min(70vh,_600px)]"
+        data-sizes="auto"
+        data-srcset="{{ transformedImageSrcset }}"
+        src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+        alt="{{ asset.alt }}"
+      >
+    {% endif %}
+
+    {% if asset.kind == 'video' %}
+      <video data-video-target class="object-cover w-full h-[min(70vh,_600px)]" autoplay crossorigin playsinline muted loop data-video-src="{{ asset.url }}" src=""></video>
+      <button class="place-self-end z-10 m-10" data-video-control><span data-text-target>Pause</span></button>
+    {% endif %}
+  {% endif %}
+</div>

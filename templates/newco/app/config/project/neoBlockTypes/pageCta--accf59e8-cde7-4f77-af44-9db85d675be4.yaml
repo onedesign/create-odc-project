@@ -1,0 +1,58 @@
+childBlocks:
+  - textStack
+conditions:
+  craft\elements\Entry:
+    class: craft\elements\conditions\entries\EntryCondition
+    conditionRules:
+      -
+        class: craft\elements\conditions\entries\TypeConditionRule
+        operator: in
+        uid: 2fad46fc-ac44-4b8e-b4b7-30e3f3a52146
+        values:
+          - d82c7088-6f34-408c-ba32-30216d175651 # Home
+          - 533ac4b8-6a49-4621-8fb6-0ee5e6c5751d # Default
+    elementType: craft\elements\Entry
+    fieldContext: global
+description: ''
+enabled: true
+field: 15d9d7cd-ae8a-4ffe-b697-1e53a28b1a9e # Page Content
+fieldLayouts:
+  c5a2bbf4-1685-4a44-9201-f70c849ed6ce:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            type: benf\neo\fieldlayoutelements\ChildBlocksUiElement
+            uid: a068bc63-ecc8-47d9-b17c-4fda230f0650
+            userCondition: null
+          -
+            elementCondition: null
+            fieldUid: d3be0d29-d384-4390-8f83-50f1db57a06b # Link Field
+            instructions: null
+            label: __blank__
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 4cb1e94f-c098-499e-8624-f2b448707a37
+            userCondition: null
+            warning: null
+            width: 100
+        name: Settings
+        uid: ded63711-5438-457b-a061-e66285db1208
+        userCondition: null
+group: null
+groupChildBlockTypes: true
+handle: pageCta
+icon: null
+ignorePermissions: true
+maxBlocks: 1
+maxChildBlocks: 0
+maxSiblingBlocks: 0
+minBlocks: 0
+minChildBlocks: 0
+minSiblingBlocks: 0
+name: 'Page CTA'
+sortOrder: 9
+topLevel: false

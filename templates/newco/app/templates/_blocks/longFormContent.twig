@@ -1,0 +1,10 @@
+{% set childBlocks = block.children.collect() %}
+
+{# Output #}
+{% if childBlocks | length %}
+  <div class="[{{ block.type.handle }}] max-w-prose mx-auto">
+    {% for block in childBlocks %}
+      {% include '_blocks/' ~ block.type ignore missing %}
+    {% endfor %}
+  </div>
+{% endif %}

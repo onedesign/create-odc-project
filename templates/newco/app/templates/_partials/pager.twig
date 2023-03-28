@@ -1,0 +1,8 @@
+{% if pageInfo is defined %}
+  {% if pageInfo.prevUrl or pageInfo.nextUrl %}
+    <nav class="pager" aria-label="Pagination Navigation">
+      {% if pageInfo.prevUrl %}<a href="{{ pageInfo.prevUrl }}">Previous Page</a>{% endif %}
+      {% if pageInfo.nextUrl %}<a href="{{ pageInfo.nextUrl }}">Next Page</a>{% endif %}
+    </nav>
+  {% endif %}
+{% endif %}

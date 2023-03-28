@@ -1,0 +1,56 @@
+{% from "_macros/links" import linkCta %}
+{% from "_macros/formatting" import ordinalPrecedence %}
+
+{% set footerNavigation = craft.entries().section('footerNavigation').one().footerNavigation.collect() %}
+{% set contact = craft.entries().section('globalContact').one() %}
+{% set address = contact.address ?? null %}
+{% set email = contact.email ?? null %}
+{% set telephone = contact.telephone ?? null %}
+{% set contact = address or email or telephone %}
+
+{# Output #}
+<footer id="footer">
+  <div class="container grid gap-8 mx-auto p-4">
+    <a href="{{ siteUrl }}">{{ siteName }}</a>
+
+    {% if footerNavigation | length %}
+      {% for navigationGroup in footerNavigation %}
+        <div>
+          {% if navigationGroup.plainText %}
+            <div>{{ navigationGroup.plainText | typogrify(true) }}</div>
+          {% endif %}
+
+          <nav class="footer-navigation" aria-label="{{ ordinalPrecedence(loop.index) | capitalize }} footer menu">
+            <ul>
+              {% for item in navigationGroup.navigation.collect() %}
+                <li>{{ linkCta(item.linkField) }}</li>
+              {% endfor %}
+            </ul>
+          </nav>
+        </div>
+      {% endfor %}
+    {% endif %}
+
+    {% if contact %}
+      <div>
+        <h2 id="contact">Contact</h2>
+        {% if address %}
+          <address>
+            {{ address | nl2br }}
+          </address>
+        {% endif %}
+
+        {% if email %}
+          <div><a href="mailto:{{ email }}">{{ email }}</a></div>
+        {% endif %}
+
+        {% if telephone %}
+          <div><a href="tel:{{ telephone }}">{{ telephone }}</a></div>
+        {% endif %}
+      </div>
+    {% endif %}
+
+    <a href="#header">Back to top</a>
+    <p>&copy; Copyright {{ "now"|date("Y") }} {{ siteName }}</p>
+  </div>
+</footer>

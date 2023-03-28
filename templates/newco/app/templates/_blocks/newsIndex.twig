@@ -1,0 +1,23 @@
+{% set newsQuery = craft.entries()
+  .section('news')
+  .orderBy('publicationDate DESC')
+  .limit(block.limit ?? '-1') %}
+
+{% if block.pagination %}
+  {% paginate newsQuery as pageInfo, newsEntries %}
+{% else %}
+  {% set newsEntries = newsQuery.collect() %}
+{% endif %}
+
+{# Output #}
+<div class="[{{ block.type.handle }}]">
+  <ol class="space-y-8">
+    {% for item in newsEntries %}
+      <li>
+        {% include "_partials/news/" ~ item.type %}
+      </li>
+    {% endfor %}
+  </ol>
+
+  {% include '_partials/pager' %}
+</div>

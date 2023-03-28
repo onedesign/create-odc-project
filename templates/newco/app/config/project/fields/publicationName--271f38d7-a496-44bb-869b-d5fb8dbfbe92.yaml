@@ -1,0 +1,19 @@
+columnSuffix: gizaomiz
+contentColumnType: text
+fieldGroup: 09af1b3a-3b1a-4ef4-8d8b-764cf7f18532 # News
+handle: publicationName
+instructions: null
+name: 'Publication Name'
+searchable: false
+settings:
+  byteLimit: null
+  charLimit: null
+  code: false
+  columnType: null
+  initialRows: 4
+  multiline: false
+  placeholder: null
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

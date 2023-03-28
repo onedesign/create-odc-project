@@ -1,0 +1,16 @@
+columnSuffix: null
+contentColumnType: string
+fieldGroup: 71dfacc3-c49c-4901-9376-bce3c6a72611 # Globals
+handle: primaryNavigation
+instructions: null
+name: 'Primary Navigation'
+searchable: false
+settings:
+  contentTable: '{{%matrixcontent_primarynavigation}}'
+  maxBlocks: null
+  minBlocks: null
+  propagationKeyFormat: null
+  propagationMethod: all
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

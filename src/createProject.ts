@@ -16,14 +16,20 @@ async function createProject(options: Options) {
   const currentFileUrl = import.meta.url;
   const templateDirectory = path.resolve(
     decodeURI(fileURLToPath(currentFileUrl)),
-    '../../templates',
-    options.template.toLowerCase()
+    '../../templates'
   );
 
   const tasks = new Listr([
     {
-      title: 'Copy Project Files',
-      task: () => copyTemplateFiles(templateDirectory, targetDirectory),
+      title: 'Copy Base Project Files',
+      task: () =>
+        copyTemplateFiles(`${templateDirectory}/craftcms-js/`, targetDirectory),
+    },
+    {
+      title: 'Copy NewCo Project Files',
+      enabled: () => options.template === 'newco',
+      task: () =>
+        copyTemplateFiles(`${templateDirectory}/newco/`, targetDirectory),
     },
     {
       title: 'Rename .gitignore File',
@@ -36,23 +42,22 @@ async function createProject(options: Options) {
     },
     {
       title: 'Initialize Git',
+      enabled: () => options.git,
       task: () => initGitRepo(targetDirectory),
     },
     {
       title: 'Install Node Dependencies',
+      enabled: () => options.install,
       task: () => installNodePackages(targetDirectory),
-      skip: () => {
-        if (!options.install) {
-          return 'Pass --install or -i to automatically install dependencies.';
-        }
-      },
     },
   ]);
 
   try {
     await tasks.run();
+    // eslint-disable-next-line no-console
     console.log('%s Project ready', chalk.green.bold('DONE'));
   } catch (error) {
+    // eslint-disable-next-line no-console
     console.log(`${error}`, chalk.red.bold('ERROR'));
   }
 }

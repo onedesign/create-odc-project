@@ -1,0 +1,15 @@
+defaultPlacement: end
+enableVersioning: true
+handle: team
+name: Team
+propagationMethod: all
+siteSettings:
+  7b2005f1-de18-4004-b44d-e7ed18ae73c5: # ODC Lean Starter
+    enabledByDefault: true
+    hasUrls: true
+    template: team/_entry
+    uriFormat: '{% if type == ''full'' %}team/{slug}{% endif %}'
+structure:
+  maxLevels: 1
+  uid: 7c497ec9-ed43-4b64-afc3-08c13bbbacf5
+type: structure

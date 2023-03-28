@@ -1,0 +1,7 @@
+{% set form = block.form.one() %}
+
+{% if form | length %}
+  <div class="[{{ block.type.handle }}]">
+    {{ craft.formie.renderForm(form.handle) }}
+  </div>
+{% endif %}

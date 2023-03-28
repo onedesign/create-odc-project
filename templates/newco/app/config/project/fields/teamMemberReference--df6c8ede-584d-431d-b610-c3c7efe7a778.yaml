@@ -1,0 +1,34 @@
+columnSuffix: null
+contentColumnType: string
+fieldGroup: 06f01cd7-dcd0-428a-840a-522aa8ecb4fb # Team
+handle: teamMemberReference
+instructions: null
+name: 'Team Member Reference'
+searchable: false
+settings:
+  allowSelfRelations: false
+  localizeRelations: false
+  maxRelations: null
+  minRelations: 1
+  selectionCondition:
+    __assoc__:
+      -
+        - elementType
+        - craft\elements\Entry
+      -
+        - fieldContext
+        - global
+      -
+        - class
+        - craft\elements\conditions\entries\EntryCondition
+  selectionLabel: 'Add a team member'
+  showSiteMenu: true
+  source: null
+  sources:
+    - 'section:5af4e083-8f1d-423a-b01d-b58f40719cd0' # Team
+  targetSiteId: null
+  validateRelatedElements: false
+  viewMode: null
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Entries

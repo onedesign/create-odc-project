@@ -1,0 +1,19 @@
+columnSuffix: ozdldgkr
+contentColumnType: text
+fieldGroup: 06f01cd7-dcd0-428a-840a-522aa8ecb4fb # Team
+handle: suffix
+instructions: null
+name: Suffix
+searchable: false
+settings:
+  byteLimit: null
+  charLimit: null
+  code: false
+  columnType: null
+  initialRows: 4
+  multiline: false
+  placeholder: null
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

@@ -1,0 +1,345 @@
+{# ============================================================================
+Image Name
+
+Returns a unique string referencing a single Craft image.
+Params:
+- image: An image from a Craft assets field.
+
+Usage:
+{% from "_macros/images" import imageName %}
+{{ imageName(image) }}
+============================================================================ #}
+{% macro imageName(image) %}
+  {{- 'image-' ~ image.id | kebab | default('') -}}
+{% endmacro %}
+
+{# ============================================================================
+User Content Image
+
+Returns a figure element for a Craft image asset that is optimized for
+displaying user uploaded images with unpredictable dimensions.
+
+Params:
+- image: An image from a Craft assets field.
+
+Usage:
+{% from "_macros/images" import imageName %}
+{{ userContentImage(image) }}
+============================================================================ #}
+{% macro userContentImage(image) %}
+  {% if image | length %}
+    {% set transformedImage = craft.imager.transformImage(image, { mode: 'crop', quality: 80, width: 400, ratio: image.width/image.height }) %}
+    {% set imageName = _self.imageName(image) %}
+    <div class="prose">
+      <div style="max-width: {{ transformedImage.width }}px; margin: 0 auto;">
+        <figure class="{{ imageName }}">
+          <img
+            alt="{{ image.alt | default('') }}"
+            class="absolute inset-0 h-full w-full lazyload"
+            data-src="{{ transformedImage.url }}"
+            height="{{ transformedImage.height }}"
+            src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+            width="{{ transformedImage.width }}"
+          >
+          {% if image.caption | length %}
+            <figcaption>
+              <div class="caption">
+                <span class="type-caption">{{ image.caption }}</span>
+              </div>
+            </figcaption>
+          {% endif %}
+        </figure>
+      </div>
+    </div>
+      <style>
+        .{{ imageName }} {
+          padding-top: {{ image.height / image.width * 100}}%;
+          position: relative;
+        }
+      </style>
+  {% endif %}
+{% endmacro %}
+
+{# ============================================================================
+Get Params
+Returns a params object used for getting a `srcset`.
+Params:
+- transformKey: What key to select from the macro's `TRANSFORM_MAP`.
+Usage:
+{% from "_macros/images" import getParams %}
+{{ getParams(transformKey) }}
+============================================================================ #}
+{%- macro getParams(transformKey) -%}
+  {% set TRANSFORM_MAP = {
+    'scale': {
+      width: 10,
+      mode: 'max',
+    },
+    '1x1': {
+      width: 10,
+      height: 10,
+      mode: 'crop',
+    },
+    '3x4': {
+      width: 12,
+      height: 16,
+      mode: 'crop',
+    },
+    '16x9': {
+      width: 16,
+      height: 9,
+      mode: 'crop',
+    },
+  } %}
+
+  {% set transform = TRANSFORM_MAP[transformKey] %}
+
+  {% return {
+    w: transform.width,
+    h: transform.height ?? null,
+    q: 60,
+    fit: transform.mode,
+  } %}
+{%- endmacro getParams -%}
+
+
+{# ============================================================================
+Get Aspect Ratio Class
+Returns CSS classes for a given transform key.
+Params:
+- transformKey: The key used to get a transform from the `getParams` macro.
+- variant: A Tailwind `screen` value. Used to create a responsive class.
+Usage:
+{% from "_macros/images" import getAspectRatioClass %}
+{{ getAspectRatioClass(transformKey, variant) }}
+============================================================================ #}
+{%- macro getAspectRatioClass(transformKey, variant = null) -%}
+  {% if transformKey == 'scale' %}
+    {% set widthClass = 'aspect-w-1' %}
+    {% set heightClass = 'aspect-h-1' %}
+  {% else %}
+    {% set sizes = transformKey|split('x') %}
+    {% set widthClass = 'aspect-w-' ~ sizes[0] %}
+    {% set heightClass = 'aspect-h-' ~ sizes[1] %}
+  {% endif %}
+
+  {% if variant %}
+    {% set widthClass = variant ~ ':' ~ widthClass %}
+    {% set heightClass = variant ~ ':' ~ heightClass %}
+  {% endif %}
+
+  {% return widthClass ~ ' ' ~ heightClass %}
+{%- endmacro getAspectRatioClass -%}
+
+
+{# ============================================================================
+Source Image
+Returns an object with three image properties: URL, width, and height.
+Params:
+- asset: A Craft asset.
+- config: An options object.
+- sizeMultiplier: A number used to scale the image width and height.
+Usage:
+{% from "_macros/images" import srcImg %}
+{{ srcImg(CraftAsset, config, sizeMultiplier) }}
+============================================================================ #}
+{%- macro srcImg(asset, config = {}, sizeMultiplier = 50) -%}
+
+  {# Animated GIFs #}
+  {% if asset|length and asset.extension == 'gif' %}
+    {% return asset.url %}
+  {% endif %}
+
+  {# Set some defaults #}
+  {% set defaults = { transform: '8x5' } %}
+
+  {# Merge config with defaults #}
+  {% set config = defaults|merge(config) %}
+
+  {# Get the image params #}
+  {% set params = _self.getParams(config.transform) %}
+
+  {# Get scaled width and height #}
+  {% set scaledWidth = params.w * sizeMultiplier %}
+  {% set scaledHeight = params.h * sizeMultiplier %}
+
+  {# Get updated params #}
+  {% set transformParams = {
+    width: scaledWidth < asset.width ? scaledWidth : asset.width,
+    height: scaledHeight < asset.height ? scaledHeight : asset.height,
+    mode: params.fit,
+    quality: params.q,
+  } %}
+
+  {% set transformedImage = craft.imager.transformImage(asset,
+    { width: transformParams.width },
+    {
+      ratio: transformParams.width and transformParams.height ? (transformParams.width / transformParams.height) : null,
+    }) %}
+
+  {% return {
+    scaledHeight: scaledHeight,
+    scaledWidth: scaledWidth,
+    url: transformedImage.url,
+  } %}
+{%- endmacro srcImg -%}
+
+
+{# ============================================================================
+Srcset
+Returns a `srcset` string for a Craft asset.
+Params:
+- asset: A Craft asset.
+- params: A params object returned from the `getParams` macro.
+Usage:
+{% from "_macros/images" import srcset %}
+{{ srcset(CraftAsset, params) }}
+============================================================================ #}
+{%- macro srcset(asset, params) -%}
+  {% set srcsetItems = [] %}
+
+  {% set transformedImages = craft.imager.transformImage(asset,
+    [
+      { width: 300 },
+      { width: 512 },
+      { width: 624 },
+      { width: 768 },
+      { width: 990 },
+      { width: 1440 },
+      { width: 1600 },
+    ],
+    {
+      ratio: params.w and params.h ? (params.w / params.h) : null,
+      'fp-x': params['fp-x'] ?? '0.5',
+      'fp-y': params['fp-y'] ?? '0.5',
+    }) %}
+
+  {% return craft.imager.srcset(transformedImages) %}
+{%- endmacro srcset -%}
+
+
+{# ============================================================================
+Img
+Returns an `<img>` element for a Craft asset.
+Params:
+- asset: A Craft asset.
+- config: An options object.
+Usage:
+{% from "_macros/images" import img %}
+{{ img(CraftAsset, {
+  alt: 'My alt text',
+  id: '',
+  lazy: true,
+  transform: '4x3',
+  wrapperClass: '',
+}) }}
+============================================================================ #}
+{%- macro img(asset, config = {}) -%}
+  {% if not asset is instance of('craft\\elements\\Asset') %}
+    {% return null %}
+  {% endif %}
+
+  {% from "_macros/formatting" import sanitize %}
+
+  {# Set some defaults #}
+  {% set defaults = {
+    alt: sanitize(asset.alt ?? ''),
+    class: 'object-cover select-none',
+    id: null,
+    lazy: true,
+    sizes: '50vw',
+    transform: '4x3',
+    bypassScaleClasses: false,
+    wrapperClass: 'overflow-hidden',
+    ariaHidden: false,
+    link: false,
+    externalLink: false
+  } %}
+
+  {# Merge config with defaults #}
+  {% set config = defaults|merge(config) %}
+
+  {# Set a default for img #}
+  {% set img = null %}
+
+  {# Animated GIFs #}
+  {% if asset|length and asset.extension == 'gif' %}
+    {% set img %}
+      <img src="{{ asset.url }}" alt="{{ config.alt ?? '' }}">
+    {% endset %}
+    {% return img %}
+  {% endif %}
+
+  {# Get the image params #}
+  {% set fullParams = _self.getParams(config.transform)|merge({
+    'fp-x': asset.focalPoint|first,
+    'fp-y': asset.focalPoint|last
+  }) %}
+
+  {# Get the fallback image properties #}
+  {% set srcImg = _self.srcImg(asset, { transform: config.transform }) %}
+
+  {# Set aspect ratio class #}
+  {% if config.transform == 'scale' %}
+    {% set imgName = 'img-' ~ asset.id|kebab ~ '-' ~ config.id ?? random() %}
+    {% set aspectRatioClass = imgName %}
+    {% set config = config|merge({
+      class: config.class ~ ' absolute inset-0 w-full h-full'
+    }) %}
+  {% else %}
+    {% set aspectRatioClass = _self.getAspectRatioClass(config.transform) %}
+  {% endif %}
+
+  {% if config.link %}
+    <a href="{{ config.link }}" {% if config.externalLink %}target="_blank" rel="noopener noreferrer" {% endif %}class="{{ aspectRatioClass }} {{ config.wrapperClass }}">
+  {% else %}
+    <div class="{{ aspectRatioClass }} {{ config.wrapperClass }}">
+  {% endif %}
+  <img
+    class="{{ config.class }} {{ config.lazy ? 'lazyload' }}"
+    src="{{ srcImg.url }}"
+    {% if config.lazy %}
+      {# See: https://github.com/aFarkas/lazysizes#modern-transparent-srcset-pattern #}
+      srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+      data-src="{{ srcImg.url }}"
+      data-srcset="{{ _self.srcset(asset, fullParams) }}"
+      data-sizes="auto"
+    {% else %}
+      srcset="{{ _self.srcset(asset, fullParams) }}"
+      sizes="{{ config.sizes }}"
+    {% endif %}
+    alt="{{ config.alt }}"
+    draggable="false"
+    height="{{ srcImg.scaledHeight }}"
+    width="{{ srcImg.scaledWidth }}"
+    {% if config.ariaHidden %}
+      aria-hidden="true"
+    {% endif %}
+  />
+  <noscript>
+    <img
+      class="{{ config.class }}"
+      src="{{ srcImg.url }}"
+      alt="{{ config.alt }}"
+      height="{{ srcImg.scaledHeight }}"
+      width="{{ srcImg.scaledWidth }}"
+      {% if config.ariaHidden %}
+        aria-hidden="true"
+      {% endif %}
+    />
+  </noscript>
+
+  {% if config.transform == 'scale' and config.bypassScaleClasses == false %}
+    <style>
+      .{{- imgName -}} {
+        padding-top: {{- (asset.height / asset.width) * 100 -}}%;
+        position: relative;
+      }
+    </style>
+  {% endif %}
+  {% if config.link %}
+    </a>
+  {% else %}
+    </div>
+  {% endif %}
+{%- endmacro img -%}

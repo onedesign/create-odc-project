@@ -1,0 +1,56 @@
+{
+  "name": "odc-craft-base",
+  "version": "1.0.0",
+  "description": "Base craft install for ODC projects",
+  "main": "index.js",
+  "scripts": {
+    "start": "vite",
+    "build": "vite build",
+    "lint": "eslint ./src --fix"
+  },
+  "engines": {
+    "node": ">= 16.17.1",
+    "npm": ">= 8.15.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:onedesign/craft-starter.git"
+  },
+  "author": "One Design Company <dev@onedesigncompany.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/onedesign/craft-starter/issues"
+  },
+  "homepage": "https://github.com/onedesign/craft-starter/blob/main/README.md",
+  "devDependencies": {
+    "@babel/eslint-parser": "^7.19.1",
+    "@rollup/plugin-eslint": "^8.0.2",
+    "@tailwindcss/aspect-ratio": "^0.4.2",
+    "@tailwindcss/typography": "^0.5.9",
+    "autoprefixer": "^10.4.12",
+    "dotenv": "^16.0.3",
+    "eslint": "^8.24.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-compat": "^4.0.2",
+    "eslint-plugin-prettier": "^4.2.1",
+    "prettier": "^2.7.1",
+    "prettier-plugin-tailwindcss": "^0.2.2",
+    "sass": "^1.55.0",
+    "tailwindcss": "^3.1.8",
+    "vite": "^4.1.1",
+    "vite-plugin-craftcms": "^1.0.0",
+    "vite-plugin-restart": "^0.3.1"
+  },
+  "browserslist": [
+    "defaults",
+    "not op_mini all",
+    "not kaios >= 2.5"
+  ],
+  "dependencies": {
+    "body-scroll-lock": "^4.0.0-beta.0",
+    "focus-trap": "^7.2.0",
+    "gsap": "^3.11.5",
+    "lazysizes": "^5.3.2",
+    "lottie-web": "^5.10.2"
+  }
+}

@@ -1,0 +1,40 @@
+childBlocks: null
+conditions: null
+description: ''
+enabled: true
+field: 15d9d7cd-ae8a-4ffe-b697-1e53a28b1a9e # Page Content
+fieldLayouts:
+  d35dc971-9c1c-4ebf-8385-b5cb7fef0f1d:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: 3e4a1400-6cd4-4e99-a37c-2c4fdcfad8fa # Rich Text Full
+            instructions: null
+            label: __blank__
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 593d112a-cd2f-4b7f-b073-047ab59380bb
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: 6f5ca75c-6ad9-4778-9553-614f1312425b
+        userCondition: null
+group: null
+groupChildBlockTypes: true
+handle: longFormText
+icon: null
+ignorePermissions: true
+maxBlocks: 0
+maxChildBlocks: 0
+maxSiblingBlocks: 0
+minBlocks: 0
+minChildBlocks: 0
+minSiblingBlocks: 0
+name: 'Article Text'
+sortOrder: 3
+topLevel: false

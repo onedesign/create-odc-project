@@ -1,0 +1,51 @@
+{% extends '_layout' %}
+
+{% from "_macros/text" import text %}
+{% from "_macros/links" import linkCta %}
+{% from "_macros/images" import img %}
+
+{% set portrait = entry.portrait.one() %}
+
+{% block content %}
+  <article class="space-y-10">
+    <header>
+      {% if portrait %}
+        <figure class="max-w-[400px]">
+          {{ img(portrait, { transform: '3x4' }) }}
+        </figure>
+      {% endif %}
+
+      <div>
+        {{ text({
+          htmlElement: { value: 'h1' },
+          richText: entry.title,
+          textVariant: { value: '6xl' },
+        }) }}
+
+        {% if entry.jobTitle | length %}
+          <div>
+            {{ text({
+              htmlElement: { value: 'span' },
+              richText: entry.jobTitle,
+              textVariant: { value: '2xl' },
+            }) }}
+          </div>
+        {% endif %}
+
+        {% if entry.socialLinks | length %}
+          <ul>
+            {% for link in entry.socialLinks.collect() %}
+              <li>{{ linkCta(link.linkField) }}</li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+      </div>
+    </header>
+
+    {% if entry.richText | length %}
+      <div class="prose">
+        {{ entry.richText | typogrify }}
+      </div>
+    {% endif %}
+  </article>
+{% endblock %}

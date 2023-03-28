@@ -1,0 +1,40 @@
+childBlocks: null
+conditions: null
+description: ''
+enabled: true
+field: 15d9d7cd-ae8a-4ffe-b697-1e53a28b1a9e # Page Content
+fieldLayouts:
+  faa038b1-f787-445c-8efc-a1ffd1e8f886:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: d3be0d29-d384-4390-8f83-50f1db57a06b # Link Field
+            instructions: null
+            label: __blank__
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 01a2d92e-46ee-4db6-a21f-3e555b25b81b
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: 3e6e311e-772a-470a-914e-859100c77b2e
+        userCondition: null
+group: null
+groupChildBlockTypes: true
+handle: cta
+icon: null
+ignorePermissions: true
+maxBlocks: 0
+maxChildBlocks: 0
+maxSiblingBlocks: 0
+minBlocks: 0
+minChildBlocks: 0
+minSiblingBlocks: 0
+name: CTA
+sortOrder: 15
+topLevel: false

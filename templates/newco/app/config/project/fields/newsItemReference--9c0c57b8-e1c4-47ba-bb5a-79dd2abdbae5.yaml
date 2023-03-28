@@ -1,0 +1,34 @@
+columnSuffix: null
+contentColumnType: string
+fieldGroup: 09af1b3a-3b1a-4ef4-8d8b-764cf7f18532 # News
+handle: newsItemReference
+instructions: null
+name: 'News Item Reference'
+searchable: false
+settings:
+  allowSelfRelations: false
+  localizeRelations: false
+  maxRelations: null
+  minRelations: null
+  selectionCondition:
+    __assoc__:
+      -
+        - elementType
+        - craft\elements\Entry
+      -
+        - fieldContext
+        - global
+      -
+        - class
+        - craft\elements\conditions\entries\EntryCondition
+  selectionLabel: 'Add a news entry'
+  showSiteMenu: false
+  source: null
+  sources:
+    - 'section:473a7662-54d9-44c8-8893-15b2bf2e10a9' # News
+  targetSiteId: null
+  validateRelatedElements: false
+  viewMode: null
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Entries

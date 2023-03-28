@@ -1,0 +1,21 @@
+defaultPlacement: end
+enableVersioning: true
+handle: globalContact
+name: 'Global Contact'
+previewTargets:
+  -
+    __assoc__:
+      -
+        - label
+        - 'Primary entry page'
+      -
+        - urlFormat
+        - '{url}'
+propagationMethod: all
+siteSettings:
+  7b2005f1-de18-4004-b44d-e7ed18ae73c5: # ODC Lean Starter
+    enabledByDefault: true
+    hasUrls: false
+    template: null
+    uriFormat: null
+type: single
