@@ -1,0 +1,73 @@
+fieldLayouts:
+  9d33077b-89d8-4039-adb8-3ca66d550f9b:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            elementCondition: null
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: e249e296-548f-4681-9d5c-ba6d9089cb2d
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 15d9d7cd-ae8a-4ffe-b697-1e53a28b1a9e # Page Content
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: e113f31c-abce-4f76-8184-1f78e25e782f
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: caece498-c024-40fd-8385-e9b59df02d94
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: 67fd8ee8-edc0-4bdf-8090-281a0024761d # SEO
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: d0725154-7ab3-4631-85e5-8c9f7317572b
+            userCondition: null
+            warning: null
+            width: 100
+        name: SEO
+        uid: 83630ec9-5e80-4df9-813f-cde5920a74d3
+        userCondition: null
+handle: home
+hasTitleField: false
+name: Home
+section: b3b4826c-1099-4106-a8d9-2e2da6a096bc # Home
+sortOrder: 1
+titleFormat: '{section.name|raw}'
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

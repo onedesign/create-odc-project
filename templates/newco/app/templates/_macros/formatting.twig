@@ -1,0 +1,89 @@
+{# ============================================================================
+Display Name
+
+Params:
+- config: An options object.
+    - prefix
+    - firstName
+    - lastName
+    - suffix
+
+Usage:
+{% from "_macros/formatting" import displayName %}
+{{ displayName(config) }}
+============================================================================ #}
+{%- macro displayName(config = {}) -%}
+  {% set fn = config.firstName ?? null %}
+  {% set ln = config.lastName ?? null %}
+  {% set suf = config.suffix ?? null %}
+  {% if fn and ln %}
+    {{ "#{fn} #{ln}" ~ (suf ? ", #{suf}") }}
+  {% endif %}
+{%- endmacro displayName -%}
+
+{# ============================================================================
+Ordinal Precedence
+
+Params:
+- index: Integer, 1-6. Anything above or below will attempt to use the ordinalize filter.
+
+Usage:
+{% from "_macros/formatting" import ordinalPrecedence %}
+{{ ordinalPrecedence(loop.index) }}
+============================================================================ #}
+{%- macro ordinalPrecedence(index) -%}
+  {% switch index %}
+    {% case 1 %}
+      {% set value = "primary" %}
+    {% case 2 %}
+      {% set value = "secondary" %}
+    {% case 3 %}
+      {% set value = "tertiary" %}
+    {% case 4 %}
+      {% set value = "quaternary" %}
+    {% case 5 %}
+      {% set value = "quinary" %}
+    {% case 6 %}
+      {% set value = "senary" %}
+    {% default %}
+      {% set value = index | ordinalize %}
+  {% endswitch %}
+
+  {% return value %}
+{%- endmacro ordinalPrecedence -%}
+
+
+{# ============================================================================
+Phone Number
+
+Returns a 10-digit phone number as a string.
+
+Params:
+- num: A 10-digit phone number.
+
+Usage:
+{% from "_macros/formatting" import phoneNumber %}
+{{ phoneNumber(num) }}
+============================================================================ #}
+{%- macro phoneNumber(num = '') -%}
+  {% if num|length == 10 %}
+    {{- "(#{num|slice(0, 3)}) #{num|slice(3, 3)}-#{num|slice(6, 4)}" -}}
+  {% endif %}
+{%- endmacro phoneNumber -%}
+
+
+{# ============================================================================
+Sanitize text
+
+Strip HTML tags, single quotes, and double quotes.
+
+Params:
+- text: The string to sanitize.
+
+Usage:
+{% from "_macros/formatting" import sanitize %}
+{{ sanitize(text) }}
+{# ========================================================================== #}
+{%- macro sanitize(text = '') -%}
+  {{- text|striptags|replace({ '"': '', '\'': '' }) -}}
+{%- endmacro sanitize -%}

@@ -1,0 +1,73 @@
+fieldLayouts:
+  82674053-046a-493a-8630-32eac0e4e0f8:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            elementCondition: null
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: 962d47e6-0d00-4700-919f-5e96b96fe7b0
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 15d9d7cd-ae8a-4ffe-b697-1e53a28b1a9e # Page Content
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: fcbcab02-b9e8-4237-bc6b-dc2c5765bd67
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: 2024e261-5981-4f55-b709-d98caf2164de
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: 67fd8ee8-edc0-4bdf-8090-281a0024761d # SEO
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 050989b8-fb92-447a-bf6b-2da0c27cb1e9
+            userCondition: null
+            warning: null
+            width: 100
+        name: SEO
+        uid: dfb75ccc-fcc6-4de9-ab14-52f4b8847206
+        userCondition: null
+handle: internal
+hasTitleField: true
+name: Internal
+section: 473a7662-54d9-44c8-8893-15b2bf2e10a9 # News
+sortOrder: 1
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

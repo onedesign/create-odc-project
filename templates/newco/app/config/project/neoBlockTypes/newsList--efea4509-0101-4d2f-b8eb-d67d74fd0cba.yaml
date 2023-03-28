@@ -1,0 +1,59 @@
+childBlocks: null
+conditions:
+  craft\elements\Entry:
+    class: craft\elements\conditions\entries\EntryCondition
+    conditionRules:
+      -
+        class: craft\elements\conditions\entries\TypeConditionRule
+        operator: in
+        uid: 4f89fad6-b726-412c-ac11-c88579870ece
+        values:
+          - d82c7088-6f34-408c-ba32-30216d175651 # Home
+          - 533ac4b8-6a49-4621-8fb6-0ee5e6c5751d # Default
+    elementType: craft\elements\Entry
+    fieldContext: global
+description: 'A manual selection of news entries'
+enabled: true
+field: 15d9d7cd-ae8a-4ffe-b697-1e53a28b1a9e # Page Content
+fieldLayouts:
+  b2b39e92-d50d-4324-bf49-367860b9375d:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            template: _cp/block-description.twig
+            type: craft\fieldlayoutelements\Template
+            uid: a09d5012-da7c-43de-8f65-f2b673d44f37
+            userCondition: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 9c0c57b8-e1c4-47ba-bb5a-79dd2abdbae5 # News Item Reference
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 47a487d0-aca5-479c-8a14-147d1e774521
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: 087ef5a7-5759-471f-aba9-76054a79d05d
+        userCondition: null
+group: null
+groupChildBlockTypes: true
+handle: newsList
+icon: null
+ignorePermissions: true
+maxBlocks: 0
+maxChildBlocks: 0
+maxSiblingBlocks: 0
+minBlocks: 0
+minChildBlocks: 0
+minSiblingBlocks: 0
+name: 'News List'
+sortOrder: 11
+topLevel: false

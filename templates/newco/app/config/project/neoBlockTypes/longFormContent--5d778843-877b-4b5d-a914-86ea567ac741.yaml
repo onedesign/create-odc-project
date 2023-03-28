@@ -1,0 +1,21 @@
+childBlocks:
+  - longFormText
+  - longFormImage
+conditions: null
+description: ''
+enabled: true
+field: 15d9d7cd-ae8a-4ffe-b697-1e53a28b1a9e # Page Content
+group: null
+groupChildBlockTypes: false
+handle: longFormContent
+icon: null
+ignorePermissions: true
+maxBlocks: 0
+maxChildBlocks: 0
+maxSiblingBlocks: 1
+minBlocks: 0
+minChildBlocks: 0
+minSiblingBlocks: 0
+name: 'Long Form Content'
+sortOrder: 8
+topLevel: false

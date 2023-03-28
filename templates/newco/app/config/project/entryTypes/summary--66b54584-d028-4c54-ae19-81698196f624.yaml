@@ -1,0 +1,103 @@
+fieldLayouts:
+  3fccd17a-7238-479f-997a-aed4281d4c3d:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            elementCondition: null
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: 46382b30-4522-4af3-b4ea-c05f9f965c0b
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: c9613bf0-4ba1-4239-a80d-cb35aa56d749 # First Name
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: d3c2ab73-c8ab-40f1-b887-95304c7687f1
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition: null
+            fieldUid: 6ed4d251-7477-4ae1-8e54-d5d1ba1f81b6 # Last Name
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 51e024bd-af64-43be-adbd-052ad1b5d5d0
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition: null
+            fieldUid: 7be56c88-85db-4d0b-b971-0e0efde359e5 # Suffix
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: a424555a-7966-40ac-a192-7f26759a4191
+            userCondition: null
+            warning: null
+            width: 25
+          -
+            elementCondition: null
+            fieldUid: aadd32f4-8806-4f36-bc13-fc6e1ea56461 # Job Title
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 01a28ec8-9947-465a-a3b1-dc46dc96b743
+            userCondition: null
+            warning: null
+            width: 75
+          -
+            elementCondition: null
+            fieldUid: dad408b6-3f24-4cdf-b223-8af7fdeb269b # Portrait
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 8e939e38-eed5-492a-8935-67cec2c97e62
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: 543871f5-9958-422a-aa16-da6b79a6512e
+        userCondition: null
+handle: summary
+hasTitleField: false
+name: Summary
+section: 5af4e083-8f1d-423a-b01d-b58f40719cd0 # Team
+sortOrder: 2
+titleFormat: '{firstName} {lastName}'
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

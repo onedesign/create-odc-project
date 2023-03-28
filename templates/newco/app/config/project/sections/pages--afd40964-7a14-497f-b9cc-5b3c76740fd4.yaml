@@ -1,0 +1,15 @@
+defaultPlacement: end
+enableVersioning: true
+handle: pages
+name: Pages
+propagationMethod: all
+siteSettings:
+  7b2005f1-de18-4004-b44d-e7ed18ae73c5: # ODC Lean Starter
+    enabledByDefault: true
+    hasUrls: true
+    template: index.twig
+    uriFormat: '{slug}'
+structure:
+  maxLevels: 1
+  uid: e56eafaa-26ee-498f-a624-f30335eebd87
+type: structure

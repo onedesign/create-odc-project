@@ -1,0 +1,14 @@
+columnSuffix: fcveurwh
+contentColumnType: boolean
+fieldGroup: 09af1b3a-3b1a-4ef4-8d8b-764cf7f18532 # News
+handle: pagination
+instructions: 'Use this field to control whether not pagination will be displayed if the total number of items exceeds the limit.'
+name: Paginate
+searchable: false
+settings:
+  default: false
+  offLabel: 'No'
+  onLabel: 'Yes'
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Lightswitch

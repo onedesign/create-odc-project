@@ -1,0 +1,19 @@
+columnSuffix: bgivoxdl
+contentColumnType: text
+fieldGroup: 478acdb5-bf2a-426f-8001-9111e1b6ebaf # Common
+handle: address
+instructions: null
+name: Address
+searchable: false
+settings:
+  byteLimit: null
+  charLimit: null
+  code: false
+  columnType: null
+  initialRows: 4
+  multiline: true
+  placeholder: null
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

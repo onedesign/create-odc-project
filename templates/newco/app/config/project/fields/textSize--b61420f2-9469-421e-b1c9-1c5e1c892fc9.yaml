@@ -1,0 +1,67 @@
+columnSuffix: yaykweiq
+contentColumnType: string
+fieldGroup: 478acdb5-bf2a-426f-8001-9111e1b6ebaf # Common
+handle: textSize
+instructions: null
+name: 'Text Size'
+searchable: false
+settings:
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - sm
+        -
+          - value
+          - sm
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - base
+        -
+          - value
+          - base
+        -
+          - default
+          - '1'
+    -
+      __assoc__:
+        -
+          - label
+          - lg
+        -
+          - value
+          - lg
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - xl
+        -
+          - value
+          - xl
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 2xl
+        -
+          - value
+          - 2xl
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Dropdown

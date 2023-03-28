@@ -1,0 +1,302 @@
+field: e9e1f2ad-e992-433e-9a33-1f518140f459 # Section Heading
+fieldLayouts:
+  67517530-e955-49b3-b7ac-681fd0fd72ac:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: 54988c20-668a-46cb-b87c-ef89744d5d57 # HTML Element
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 7a93b470-2843-499a-a91e-e86088285e03
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: bed700a0-63ad-4807-807a-023f3a671a0c # Text Variant
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: e854fb53-a875-495a-a70f-0e533bc155c3
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 901ab074-69ec-43c5-b0e4-05e123d4dded # Text Content
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: ac9d6ea0-f084-403f-9837-bcd596a81837
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: b2834b9b-d5dc-49e4-8f8e-e8fd2908720b
+        userCondition: null
+fields:
+  901ab074-69ec-43c5-b0e4-05e123d4dded: # Text Content
+    columnSuffix: wodtnfdg
+    contentColumnType: text
+    fieldGroup: null
+    handle: richText
+    instructions: null
+    name: 'Text Content'
+    searchable: false
+    settings:
+      availableTransforms: ''
+      availableVolumes: ''
+      columnType: text
+      configSelectionMode: choose
+      defaultTransform: ''
+      manualConfig: ''
+      purifierConfig: null
+      purifyHtml: true
+      redactorConfig: Minimal.json
+      removeEmptyTags: false
+      removeInlineStyles: false
+      removeNbsp: false
+      showHtmlButtonForNonAdmins: false
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\redactor\Field
+  54988c20-668a-46cb-b87c-ef89744d5d57: # HTML Element
+    columnSuffix: fdcwpylf
+    contentColumnType: string
+    fieldGroup: null
+    handle: htmlElement
+    instructions: null
+    name: 'HTML Element'
+    searchable: false
+    settings:
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - H1
+            -
+              - value
+              - h1
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - H2
+            -
+              - value
+              - h2
+            -
+              - default
+              - '1'
+        -
+          __assoc__:
+            -
+              - label
+              - H3
+            -
+              - value
+              - h3
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - H4
+            -
+              - value
+              - h4
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
+  bed700a0-63ad-4807-807a-023f3a671a0c: # Text Variant
+    columnSuffix: sqgswmdn
+    contentColumnType: string
+    fieldGroup: null
+    handle: textVariant
+    instructions: 'Use this field to select display variant for the heading. If you want include a heading for accessibility and SEO but not display it on the front end, select "Visually Hidden".'
+    name: 'Text Variant'
+    searchable: false
+    settings:
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - xs
+            -
+              - value
+              - xs
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - sm
+            -
+              - value
+              - sm
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - base
+            -
+              - value
+              - base
+            -
+              - default
+              - '1'
+        -
+          __assoc__:
+            -
+              - label
+              - lg
+            -
+              - value
+              - lg
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 2xl
+            -
+              - value
+              - 2xl
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 3xl
+            -
+              - value
+              - 3xl
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 4xl
+            -
+              - value
+              - 4xl
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 5xl
+            -
+              - value
+              - 5xl
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 6xl
+            -
+              - value
+              - 6xl
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 7xl
+            -
+              - value
+              - 7xl
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 8xl
+            -
+              - value
+              - 8xl
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 9xl
+            -
+              - value
+              - 9xl
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Eyebrow
+            -
+              - value
+              - eyebrow
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Visually Hidden'
+            -
+              - value
+              - sr-only
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
+handle: headingElements
+name: 'Heading Elements'
+sortOrder: 1

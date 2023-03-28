@@ -1,0 +1,78 @@
+columnSuffix: chqtxmqu
+contentColumnType: string
+fieldGroup: 478acdb5-bf2a-426f-8001-9111e1b6ebaf # Common
+handle: htmlElement
+instructions: null
+name: 'HTML Element'
+searchable: false
+settings:
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - H1
+        -
+          - value
+          - h1
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - H2
+        -
+          - value
+          - h2
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - H3
+        -
+          - value
+          - h3
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - H4
+        -
+          - value
+          - h4
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Paragraph
+        -
+          - value
+          - p
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Span
+        -
+          - value
+          - span
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Dropdown

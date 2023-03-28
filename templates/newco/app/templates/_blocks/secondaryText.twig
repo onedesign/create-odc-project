@@ -1,0 +1,5 @@
+{% from "_macros/text" import prose %}
+
+<div class="[{{ block.type.handle }}]">
+  {{ prose(block.richText, block.textSize.value) }}
+</div>

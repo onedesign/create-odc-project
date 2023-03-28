@@ -1,0 +1,16 @@
+columnSuffix: null
+contentColumnType: string
+fieldGroup: 478acdb5-bf2a-426f-8001-9111e1b6ebaf # Common
+handle: socialLinks
+instructions: null
+name: 'Social Links'
+searchable: false
+settings:
+  contentTable: '{{%matrixcontent_sociallinks}}'
+  maxBlocks: null
+  minBlocks: null
+  propagationKeyFormat: null
+  propagationMethod: all
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

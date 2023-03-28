@@ -1,0 +1,16 @@
+columnSuffix: null
+contentColumnType: string
+fieldGroup: 3ecee518-f3cf-4e25-a61c-94abb7eba772 # Page
+handle: sectionHeading
+instructions: null
+name: 'Section Heading'
+searchable: false
+settings:
+  contentTable: '{{%matrixcontent_sectionheading}}'
+  maxBlocks: 1
+  minBlocks: null
+  propagationKeyFormat: null
+  propagationMethod: all
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

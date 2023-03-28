@@ -1,0 +1,20 @@
+columnSuffix: jztahemw
+contentColumnType: integer(10)
+fieldGroup: 478acdb5-bf2a-426f-8001-9111e1b6ebaf # Common
+handle: limit
+instructions: null
+name: Limit
+searchable: false
+settings:
+  decimals: 0
+  defaultValue: null
+  max: null
+  min: 1
+  prefix: null
+  previewCurrency: null
+  previewFormat: none
+  size: 5
+  suffix: null
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Number

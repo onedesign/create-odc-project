@@ -1,0 +1,52 @@
+childBlocks: null
+conditions: null
+description: ''
+enabled: true
+field: 15d9d7cd-ae8a-4ffe-b697-1e53a28b1a9e # Page Content
+fieldLayouts:
+  ffc39717-9976-4bcc-85bb-694f5557a27c:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: b61420f2-9469-421e-b1c9-1c5e1c892fc9 # Text Size
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: aa2dcc60-b7bf-4af6-bd64-3b825a35602e
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: e2bbfda7-9974-4d33-8bb9-39ce5900163e # Rich Text Simple
+            instructions: null
+            label: 'Text Content'
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: e2ffb5f8-582c-4c56-9149-0d9680af8402
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: 2c6365a6-ae7e-45aa-9292-f9e5ded193c1
+        userCondition: null
+group: null
+groupChildBlockTypes: true
+handle: secondaryText
+icon: null
+ignorePermissions: true
+maxBlocks: 0
+maxChildBlocks: 0
+maxSiblingBlocks: 0
+minBlocks: 0
+minChildBlocks: 0
+minSiblingBlocks: 0
+name: 'Secondary Text'
+sortOrder: 14
+topLevel: false

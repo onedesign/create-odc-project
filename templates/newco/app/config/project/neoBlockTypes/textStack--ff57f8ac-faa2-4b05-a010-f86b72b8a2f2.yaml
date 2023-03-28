@@ -1,0 +1,22 @@
+childBlocks:
+  - primaryText
+  - secondaryText
+  - cta
+conditions: null
+description: ''
+enabled: true
+field: 15d9d7cd-ae8a-4ffe-b697-1e53a28b1a9e # Page Content
+group: null
+groupChildBlockTypes: true
+handle: textStack
+icon: null
+ignorePermissions: true
+maxBlocks: 0
+maxChildBlocks: 0
+maxSiblingBlocks: 0
+minBlocks: 0
+minChildBlocks: 0
+minSiblingBlocks: 0
+name: 'Text Stack'
+sortOrder: 5
+topLevel: false

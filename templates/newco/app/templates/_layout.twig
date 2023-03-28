@@ -1,0 +1,25 @@
+{% include '_partials/vite' ignore missing %}
+{% import '_partials/vite' as vite %}
+
+{# --------------------------------------------------------- #}
+{# Output
+{# --------------------------------------------------------- #}
+<!DOCTYPE html>
+<html lang="{{ craft.app.language }}" class="no-js">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+<a class="skip-link" href="#main-content">Skip to content</a>
+
+{% include "_partials/header" %}
+
+<main class="container p-4 mx-auto" id="main-content" tabindex="-1">
+  {% block content %}{% endblock %}
+</main>
+
+{% include "_partials/footer" %}
+</body>
+</html>

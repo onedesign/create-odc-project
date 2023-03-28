@@ -1,0 +1,14 @@
+columnSuffix: uqlbkukh
+contentColumnType: boolean
+fieldGroup: 06f01cd7-dcd0-428a-840a-522aa8ecb4fb # Team
+handle: showPortraits
+instructions: 'Use this field to control whether or not team member portraits are displayed in the list.'
+name: 'Show Team Member Portraits'
+searchable: false
+settings:
+  default: true
+  offLabel: 'No'
+  onLabel: 'Yes'
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Lightswitch

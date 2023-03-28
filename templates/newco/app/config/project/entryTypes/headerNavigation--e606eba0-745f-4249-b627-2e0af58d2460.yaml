@@ -1,0 +1,29 @@
+fieldLayouts:
+  4bbe0928-3d65-48e3-ab46-e7e245488955:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: 32e591e9-e220-4d7b-9517-319a3414c071 # Primary Navigation
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: faab6224-ba1d-4d2a-aa0e-6ae3f42b9a56
+            userCondition: null
+            warning: null
+            width: 100
+        name: Settings
+        uid: b65c7358-aba5-4c4c-b432-130e08b5439b
+        userCondition: null
+handle: headerNavigation
+hasTitleField: false
+name: 'Header Navigation'
+section: 4c695998-be6c-4de8-aeea-c072d1086fc0 # Header Navigation
+sortOrder: 1
+titleFormat: '{section.name|raw}'
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

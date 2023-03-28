@@ -1,0 +1,460 @@
+dateModified: 1680019565
+elementSources:
+  craft\elements\Entry:
+    -
+      defaultSort:
+        - postDate
+        - desc
+      disabled: false
+      key: '*'
+      tableAttributes:
+        - section
+        - postDate
+        - expiryDate
+        - author
+        - link
+      type: native
+    -
+      defaultSort:
+        - title
+        - asc
+      disabled: false
+      key: singles
+      tableAttributes:
+        - link
+      type: native
+    -
+      heading: Channels
+      type: heading
+    -
+      defaultSort:
+        - postDate
+        - desc
+      disabled: false
+      key: 'section:473a7662-54d9-44c8-8893-15b2bf2e10a9' # News
+      tableAttributes:
+        - postDate
+        - author
+        - type
+        - link
+      type: native
+    -
+      heading: Structures
+      type: heading
+    -
+      defaultSort:
+        - structure
+        - asc
+      disabled: false
+      key: 'section:afd40964-7a14-497f-b9cc-5b3c76740fd4' # Pages
+      tableAttributes:
+        - dateUpdated
+        - revisionCreator
+        - link
+      type: native
+    -
+      defaultSort:
+        - structure
+        - asc
+      disabled: false
+      key: 'section:5af4e083-8f1d-423a-b01d-b58f40719cd0' # Team
+      tableAttributes:
+        - 'field:aadd32f4-8806-4f36-bc13-fc6e1ea56461' # Job Title
+        - 'field:dad408b6-3f24-4cdf-b223-8af7fdeb269b' # Portrait
+        - type
+        - link
+      type: native
+    -
+      heading: ''
+      type: heading
+    -
+      condition:
+        class: craft\elements\conditions\entries\EntryCondition
+        conditionRules:
+          -
+            class: craft\elements\conditions\entries\SectionConditionRule
+            operator: in
+            uid: d2ac44d1-eccc-46c5-9bdd-260800553f3d
+            values:
+              - 312797a8-7d21-4043-a321-e10afb5b81c8 # Footer Navigation
+              - 4162fae7-fcbb-4f90-b092-5beb4c414aa9 # Global Contact
+              - 4c695998-be6c-4de8-aeea-c072d1086fc0 # Header Navigation
+        elementType: craft\elements\Entry
+        fieldContext: global
+      defaultSort:
+        - title
+        - asc
+      key: 'custom:184421dd-3ec3-4dc5-ae66-37ebaccad16e'
+      label: Globals
+      tableAttributes: '-'
+      type: custom
+email:
+  fromEmail: dev@onedesigncompany.com
+  fromName: 'ODC Lean Starter'
+  replyToEmail: null
+  template: ''
+  transportSettings:
+    host: $SERVD_SMTP_HOSTNAME
+    password: $SERVD_SMTP_PASSWORD
+    port: $SERVD_SMTP_PORT
+    useAuthentication: $SMTP_AUTHENTICATION
+    username: $SERVD_SMTP_USERNAME
+  transportType: craft\mail\transportadapters\Smtp
+fs:
+  servdGeneral:
+    hasUrls: false
+    name: 'Servd General'
+    settings:
+      cdnUrlPattern: ''
+      customSubfolder: ''
+      makeUploadsPublic: true
+      optimisePrefix: ''
+      optimiseUrlPattern: ''
+      projectSlug: ''
+      securityKey: ''
+      subfolder: lush-wildebeast/local/
+    type: servd\AssetStorage\AssetsPlatform\Fs
+    url: null
+meta:
+  __names__:
+    00da6e35-ea0f-455c-8e9c-c67c1c952b28: Caption # Caption
+    0e8ae4d9-1c32-4c10-8304-44539e29d8cf: 'Footer Navigation' # Footer Navigation
+    1e050e3c-5e8a-46ce-90eb-029c23ee5edd: Telephone # Telephone
+    2bbe8658-038e-4e92-9f1a-17f9a3b70241: Simple # Simple
+    2fe5c407-798b-4084-a753-ec6ec2fcc9a3: External # External
+    3dffb9b1-3388-4e19-8e6d-51d718fd77f6: Internal # Internal
+    3e4a1400-6cd4-4e99-a37c-2c4fdcfad8fa: 'Rich Text Full' # Rich Text Full
+    3ecee518-f3cf-4e25-a61c-94abb7eba772: Page # Page
+    4b5ab7df-3458-4c9e-8767-fc1c7cb44441: Link # Link
+    4c695998-be6c-4de8-aeea-c072d1086fc0: 'Header Navigation' # Header Navigation
+    4f1b741f-3b7d-4677-a8bd-fb4b30d01aaf: 'Form Reference' # Form Reference
+    5af4e083-8f1d-423a-b01d-b58f40719cd0: Team # Team
+    5d778843-877b-4b5d-a914-86ea567ac741: 'Long Form Content' # Long Form Content
+    5e74e3d0-f1fb-4f1b-84ce-31d85a7f2af7: CTA # CTA
+    5ed2c97a-bd4c-45a7-8ebb-6943daf60780: Link # Link
+    5edc36a0-b4bb-41e7-9dce-2c369b4b58b2: 'Section ID' # Section ID
+    5fa8d016-75eb-4e89-9452-459a8de97b18: 'Primary Text' # Primary Text
+    6ed4d251-7477-4ae1-8e54-d5d1ba1f81b6: 'Last Name' # Last Name
+    06f01cd7-dcd0-428a-840a-522aa8ecb4fb: Team # Team
+    7b2005f1-de18-4004-b44d-e7ed18ae73c5: 'ODC Lean Starter' # ODC Lean Starter
+    7be56c88-85db-4d0b-b971-0e0efde359e5: Suffix # Suffix
+    8b7e3524-f26a-43d9-9835-846fe991c2d3: 'User Content Image' # User Content Image
+    8c38825f-6a9e-4546-8e7c-ba0c14fc5ff3: 'Eyebrow Headline' # Eyebrow Headline
+    09af1b3a-3b1a-4ef4-8d8b-764cf7f18532: News # News
+    9c0c57b8-e1c4-47ba-bb5a-79dd2abdbae5: 'News Item Reference' # News Item Reference
+    9e3e5516-266e-41fb-86d2-c2d87fd7dcdd: 'Text Variant' # Text Variant
+    012aad9f-4a4f-4938-a934-87afc923743f: 'HTML Element' # HTML Element
+    15d9d7cd-ae8a-4ffe-b697-1e53a28b1a9e: 'Page Content' # Page Content
+    17b1272f-f374-4f05-9e0e-c8bb27b51854: 'Plain Text' # Plain Text
+    32e591e9-e220-4d7b-9517-319a3414c071: 'Primary Navigation' # Primary Navigation
+    032f18e6-4141-4a00-81f6-57cc3f8a1d98: Link # Link
+    40cc59c2-c66c-4c7b-907d-70001b3c89f8: 'Text Variant' # Text Variant
+    40d07393-8258-4bcc-85e5-52abc4a0f37f: 'Social Links' # Social Links
+    44f7c69f-8fca-4289-b63e-f5f448fc5605: 'News Index' # News Index
+    50fed80a-0ff9-4dd4-9d18-1efc8e4c55f4: Limit # Limit
+    55c3d4ea-508a-40f6-8a54-bab49bb2a385: 'Text Alignment' # Text Alignment
+    63f8fecf-c1a4-4d39-b180-2bd5cd8fb515: 'Secondary Text' # Secondary Text
+    66b54584-d028-4c54-ae19-81698196f624: Summary # Summary
+    67fd8ee8-edc0-4bdf-8090-281a0024761d: SEO # SEO
+    71c678b2-d1d4-47f1-aab2-7afba0001792: 'HTML Element' # HTML Element
+    71ded679-ce09-4627-9d3d-3d8d219c4f57: 'Content Block' # Content Block
+    71dfacc3-c49c-4901-9376-bce3c6a72611: Globals # Globals
+    87bbfda4-05c6-4214-93ae-af59242a721d: 'Global Contact' # Global Contact
+    271f38d7-a496-44bb-869b-d5fb8dbfbe92: 'Publication Name' # Publication Name
+    299cb0ff-38d3-4661-8600-772662306eca: 'Article Text' # Article Text
+    357f30d9-8618-4d16-aaac-52246356e421: Form # Form
+    417d78b5-f83b-4c37-8786-82796ead93c5: 'Secondary Navigation' # Secondary Navigation
+    473a7662-54d9-44c8-8893-15b2bf2e10a9: News # News
+    478acdb5-bf2a-426f-8001-9111e1b6ebaf: Common # Common
+    533ac4b8-6a49-4621-8fb6-0ee5e6c5751d: Default # Default
+    636a860f-5fde-44c7-b722-209f4c49c247: 'Text Content' # Text Content
+    777a52f9-47ef-47fe-ba3d-169ee8895969: Link # Link
+    901ab074-69ec-43c5-b0e4-05e123d4dded: 'Text Content' # Text Content
+    997be6a7-d15c-4151-9c70-747747d399a6: Hero # Hero
+    2737ae7c-8d9a-4bee-b423-e945900a297c: 'General Images' # General Images
+    2755e60e-72d9-4c3e-8caf-edf82def3e8c: Content # Content
+    4162fae7-fcbb-4f90-b092-5beb4c414aa9: 'Global Contact' # Global Contact
+    7552e46a-1bd4-45e8-88bd-2a17f66522aa: 'Contact Form' # Contact Form
+    9200c653-60d4-4af2-bb17-66d3d1f508fe: Full # Full
+    11473ee9-2c2b-4196-9f5e-79a35f97700e: General # General
+    38316d6a-1279-411b-9ba7-efc6af5ef122: 'ODC Lean Starter' # ODC Lean Starter
+    54988c20-668a-46cb-b87c-ef89744d5d57: 'HTML Element' # HTML Element
+    312797a8-7d21-4043-a321-e10afb5b81c8: 'Footer Navigation' # Footer Navigation
+    5484724d-dabb-498b-afc5-1240dc13e768: Email # Email
+    19361971-e2c2-44c7-bf90-e5697496c38f: Section # Section
+    41517759-8a0b-49c4-9527-89908414815f: 'Heading Elements' # Heading Elements
+    aadd32f4-8806-4f36-bc13-fc6e1ea56461: 'Job Title' # Job Title
+    accf59e8-cde7-4f77-af44-9db85d675be4: 'Page CTA' # Page CTA
+    afd40964-7a14-497f-b9cc-5b3c76740fd4: Pages # Pages
+    b3b4826c-1099-4106-a8d9-2e2da6a096bc: Home # Home
+    b4d3f32f-3da9-4cd3-8611-7bd20bedc2a3: Image # Image
+    b52b618d-bccb-4879-ad07-a8e882251078: Link # Link
+    b72a2b9e-46cd-4656-acd6-18b9dfc5fe5a: Address # Address
+    b806aad1-b7bc-41d5-90da-0f6b8115ea21: 'Article Link' # Article Link
+    b61420f2-9469-421e-b1c9-1c5e1c892fc9: 'Text Size' # Text Size
+    b2037343-3108-472d-bcec-61e3d491b7c6: 'Horizontal Alignment' # Horizontal Alignment
+    bdd5f7dd-ae92-4cb6-8a42-426738ad387d: 'Team List' # Team List
+    be3ecd43-e2ec-4d3c-8efb-9473fa1c482d: 'Publication Date' # Publication Date
+    bed700a0-63ad-4807-807a-023f3a671a0c: 'Text Variant' # Text Variant
+    c5e34457-d67a-4ed0-93d9-b080918fbf8a: Contact # Contact
+    c9613bf0-4ba1-4239-a80d-cb35aa56d749: 'First Name' # First Name
+    cb22d843-e137-4dd1-8d5d-1e606ab4d6c5: Navigation # Navigation
+    cba4244b-e24d-4270-88bd-62feca5c726f: Link # Link
+    d00f7180-438e-4451-88c7-549b39239125: 'Footer Navigation' # Footer Navigation
+    d1da6692-168e-45d6-b022-3020aaae4a9c: New # New
+    d3be0d29-d384-4390-8f83-50f1db57a06b: 'Link Field' # Link Field
+    d4dbddf2-75b5-42cd-bd66-77e3e04e935e: Link # Link
+    d64ee34c-f669-4c0b-b10e-ebbd9d98b14e: Headline # Headline
+    d82c7088-6f34-408c-ba32-30216d175651: Home # Home
+    dad408b6-3f24-4cdf-b223-8af7fdeb269b: Portrait # Portrait
+    dd262531-f35e-456a-ae1f-658ac6f915e9: Paginate # Paginate
+    ddd65919-baf5-43a0-8c8e-f4cbb0378257: Link # Link
+    df6c8ede-584d-431d-b610-c3c7efe7a778: 'Team Member Reference' # Team Member Reference
+    e2bbfda7-9974-4d33-8bb9-39ce5900163e: 'Rich Text Simple' # Rich Text Simple
+    e9e1f2ad-e992-433e-9a33-1f518140f459: 'Section Heading' # Section Heading
+    e11f396c-0402-4753-9cf5-49fa1a134f1c: 'Navigation Group' # Navigation Group
+    e606eba0-745f-4249-b627-2e0af58d2460: 'Header Navigation' # Header Navigation
+    efea4509-0101-4d2f-b8eb-d67d74fd0cba: 'News List' # News List
+    f2dcbc7b-91be-4e86-af31-56d237fc656f: CTA # CTA
+    fc889bc4-92f6-45c1-b6f6-7b5987df6096: 'Show Team Member Portraits' # Show Team Member Portraits
+    fce9ece3-6186-4f7b-b659-567b1b8e395e: 'Vertical Alignment' # Vertical Alignment
+    fee9df4a-f8dd-4224-a1e2-a58995ca105c: 'Hero Media' # Hero Media
+    ff57f8ac-faa2-4b05-a010-f86b72b8a2f2: 'Text Stack' # Text Stack
+plugins:
+  dumper:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  formie:
+    edition: standard
+    enabled: true
+    licenseKey: XK2UE9OWQOL3WGILVRZ1BR9H
+    schemaVersion: 2.0.10
+    settings:
+      ajaxTimeout: 10
+      alertEmails: null
+      captchas:
+        __assoc__:
+          -
+            - recaptcha
+            -
+              __assoc__:
+                -
+                  - type
+                  - verbb\formie\integrations\captchas\Recaptcha
+                -
+                  - enabled
+                  - '0'
+                -
+                  - saveSpam
+                  - true
+                -
+                  - settings
+                  -
+                    __assoc__:
+                      -
+                        - handle
+                        - recaptcha
+                      -
+                        - type
+                        - v3
+                      -
+                        - size
+                        - normal
+                      -
+                        - theme
+                        - light
+                      -
+                        - badge
+                        - bottomright
+                      -
+                        - language
+                        - en
+                      -
+                        - minScore
+                        - 0.5
+                      -
+                        - scriptLoadingMethod
+                        - asyncDefer
+          -
+            - hcaptcha
+            -
+              __assoc__:
+                -
+                  - type
+                  - verbb\formie\integrations\captchas\Hcaptcha
+                -
+                  - enabled
+                  - '0'
+                -
+                  - saveSpam
+                  - true
+                -
+                  - settings
+                  -
+                    __assoc__:
+                      -
+                        - handle
+                        - hcaptcha
+                      -
+                        - size
+                        - normal
+                      -
+                        - theme
+                        - light
+                      -
+                        - language
+                        - en
+                      -
+                        - minScore
+                        - 0.5
+                      -
+                        - scriptLoadingMethod
+                        - asyncDefer
+          -
+            - duplicate
+            -
+              __assoc__:
+                -
+                  - type
+                  - verbb\formie\integrations\captchas\Duplicate
+                -
+                  - enabled
+                  - '1'
+                -
+                  - saveSpam
+                  - true
+                -
+                  - settings
+                  -
+                    __assoc__:
+                      -
+                        - handle
+                        - duplicate
+          -
+            - honeypot
+            -
+              __assoc__:
+                -
+                  - type
+                  - verbb\formie\integrations\captchas\Honeypot
+                -
+                  - enabled
+                  - '1'
+                -
+                  - saveSpam
+                  - true
+                -
+                  - settings
+                  -
+                    __assoc__:
+                      -
+                        - handle
+                        - honeypot
+          -
+            - javascript
+            -
+              __assoc__:
+                -
+                  - type
+                  - verbb\formie\integrations\captchas\Javascript
+                -
+                  - enabled
+                  - '1'
+                -
+                  - saveSpam
+                  - true
+                -
+                  - settings
+                  -
+                    __assoc__:
+                      -
+                        - handle
+                        - javascript
+      defaultDateDisplayType: calendar
+      defaultDateTime: null
+      defaultDateValueOption: ''
+      defaultEmailTemplate: ''
+      defaultFileUploadVolume: ''
+      defaultFormTemplate: ''
+      defaultInstructionsPosition: verbb\formie\positions\AboveInput
+      defaultLabelPosition: verbb\formie\positions\AboveInput
+      defaultPage: forms
+      emptyValuePlaceholder: 'No response.'
+      enableBackSubmission: true
+      enableCsrfValidationForGuests: true
+      enableLargeFieldStorage: false
+      enableUnloadWarning: true
+      includeDraftElementUsage: false
+      includeRevisionElementUsage: false
+      maxIncompleteSubmissionAge: 30
+      maxSentNotificationsAge: 30
+      pdfPaperOrientation: portrait
+      pdfPaperSize: letter
+      pluginName: Forms
+      queuePriority: null
+      saveSpam: true
+      sendEmailAlerts: false
+      sentNotifications: true
+      spamBehaviour: showSuccess
+      spamBehaviourMessage: ''
+      spamEmailNotifications: false
+      spamKeywords: ''
+      spamLimit: 500
+      useQueueForIntegrations: true
+      useQueueForNotifications: true
+  imager-x:
+    edition: pro
+    enabled: true
+    licenseKey: KB7CUJYUSHCZBLUS7YPJDXJK
+    schemaVersion: 4.0.0
+  neo:
+    edition: standard
+    enabled: true
+    licenseKey: L3T61FSYY9TRVBG4TCTTIGCP
+    schemaVersion: 3.6.2
+    settings:
+      blockTypeIconSources: '*'
+      collapseAllBlocks: false
+      defaultAlwaysShowGroupDropdowns: true
+      newBlockMenuStyle: classic
+      optimiseSearchIndexing: true
+  redactor:
+    edition: standard
+    enabled: true
+    schemaVersion: 2.3.0
+  seomatic:
+    edition: standard
+    enabled: true
+    licenseKey: U87M6V3BB5T40YKYFD0WBYVW
+    schemaVersion: 3.0.11
+  servd-asset-storage:
+    edition: standard
+    enabled: true
+    schemaVersion: 3.0.0
+  twig-perversion:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  typedlinkfield:
+    edition: standard
+    enabled: true
+    schemaVersion: 2.0.0
+  typogrify:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+system:
+  edition: pro
+  live: true
+  name: 'ODC Lean Starter'
+  schemaVersion: 4.4.0.4
+  timeZone: America/Los_Angeles
+users:
+  allowPublicRegistration: false
+  deactivateByDefault: false
+  defaultGroup: ''
+  photoSubpath: user-profiles
+  photoVolumeUid: 11473ee9-2c2b-4196-9f5e-79a35f97700e # General
+  requireEmailVerification: true
+  validateOnPublicRegistration: false

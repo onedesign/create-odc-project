@@ -1,0 +1,9 @@
+<article>
+  <a href="{{ item.url }}">
+    {{ item.title | typogrify(true) }}
+  </a>
+
+  <div>
+    <time datetime="{{ item.postDate | date('o-m-d') }}">{{ item.postDate | date('m/d/Y') }}</time>
+  </div>
+</article>

@@ -1,0 +1,18 @@
+{% from "_macros/text" import text %}
+
+{% set sectionHeading = block.sectionHeading.collect() %}
+{% set childBlocks = block.children.collect() %}
+
+<section {% if block.sectionId %}id="{{ block.sectionId }}"{% endif %} class="[{{ block.type.handle }}] space-y-14">
+  {% if sectionHeading | length %}
+    <div>
+      {{ text(sectionHeading[0]) }}
+    </div>
+  {% endif %}
+
+  {% if childBlocks | length %}
+    {% for childBlock in childBlocks %}
+      {% include  '_blocks/' ~ childBlock.type ignore missing with { block: childBlock } only %}
+    {% endfor %}
+  {% endif %}
+</section>

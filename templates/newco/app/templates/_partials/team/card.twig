@@ -1,0 +1,23 @@
+{% from "_macros/formatting" import displayName %}
+{% from "_macros/images" import img %}
+
+{# Output #}
+<div {{ teamMember.type == 'full' ? 'class="hover:cursor-pointer space-y-1" data-card' : 'class="space-y-1"' }}>
+  {% if portrait %}
+    <figure>
+      {{ img(portrait, { transform: '3x4' }) }}
+    </figure>
+  {% endif %}
+
+  <h2>
+    {% if teamMember.type == 'full' %}
+      <a data-card-link href="{{ teamMember.url }}">{{ displayName(teamMember) }}</a>
+    {% else %}
+      {{ displayName(teamMember) }}
+    {% endif %}
+  </h2>
+
+  {% if teamMember.jobTitle | length %}
+    <div>{{ teamMember.jobTitle }}</div>
+  {% endif %}
+</div>

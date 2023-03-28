@@ -1,0 +1,23 @@
+{% extends '_layout' %}
+{% from "_macros/text" import text %}
+
+{% block content %}
+  {% if entry.section.handle == 'pages' and entry.type.handle == 'simple' %}
+    {{ text({
+      htmlElement: { value: 'h1' },
+      richText: entry.title,
+      textVariant: { value: '6xl' },
+    }) }}
+
+  {% else %}
+    <h1 class="sr-only">{{ entry.title }}</h1>
+  {% endif %}
+
+  {% if entry.pageContent | length %}
+    <div class="space-y-20">
+      {% for block in entry.pageContent.level(1).collect() %}
+        {% include '_blocks/' ~ block.type %}
+      {% endfor %}
+    </div>
+  {% endif %}
+{% endblock %}

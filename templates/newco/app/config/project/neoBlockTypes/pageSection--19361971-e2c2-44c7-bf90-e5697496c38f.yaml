@@ -1,0 +1,71 @@
+childBlocks:
+  - hero
+  - contact
+  - longFormContent
+  - pageCta
+  - newsIndex
+  - newsList
+  - teamList
+conditions: null
+description: ''
+enabled: true
+field: 15d9d7cd-ae8a-4ffe-b697-1e53a28b1a9e # Page Content
+fieldLayouts:
+  6fdc1d6e-8d4b-44bd-b602-9677cbb34d24:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            heading: 'Section Configuration'
+            type: craft\fieldlayoutelements\Heading
+            uid: 0b4a2a6c-4fad-4816-bb4f-6e8a06d4a365
+            userCondition: null
+          -
+            elementCondition: null
+            fieldUid: 5edc36a0-b4bb-41e7-9dce-2c369b4b58b2 # Section ID
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: fb4cecb6-fa5e-4cbb-b9c0-1e741767e474
+            userCondition: null
+            warning: null
+            width: 25
+          -
+            elementCondition: null
+            fieldUid: e9e1f2ad-e992-433e-9a33-1f518140f459 # Section Heading
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: d7105064-c811-4a1f-8a69-932e4bc4b2fd
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            heading: 'Section Content'
+            type: craft\fieldlayoutelements\Heading
+            uid: da0541f3-946a-4530-97e9-bff7ce32e384
+            userCondition: null
+        name: Config
+        uid: 575be021-6d84-4af2-998c-91479ef087fa
+        userCondition: null
+group: null
+groupChildBlockTypes: false
+handle: pageSection
+icon: null
+ignorePermissions: true
+maxBlocks: 0
+maxChildBlocks: 0
+maxSiblingBlocks: 0
+minBlocks: 0
+minChildBlocks: 0
+minSiblingBlocks: 0
+name: Section
+sortOrder: 1
+topLevel: true

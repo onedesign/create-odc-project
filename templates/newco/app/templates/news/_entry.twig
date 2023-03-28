@@ -1,0 +1,20 @@
+{% extends '_layout' %}
+{% from "_macros/text" import text %}
+
+{% block content %}
+  <article>
+    <header>
+      {{ text({
+        htmlElement: { value: 'h1' },
+        richText: entry.title,
+        textVariant: { value: '6xl' },
+      }) }}
+      <time datetime="{{ entry.postDate | date('o-m-d') }}">{{ entry.postDate | date('m/d/Y') }}</time>
+    </header>
+    {% if entry.pageContent | length %}
+      {% for block in entry.pageContent.level(1).collect() %}
+        {% include '_blocks/' ~ block.type %}
+      {% endfor %}
+    {% endif %}
+  </article>
+{% endblock %}

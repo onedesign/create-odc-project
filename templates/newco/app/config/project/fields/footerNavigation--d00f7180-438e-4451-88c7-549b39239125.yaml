@@ -1,0 +1,19 @@
+columnSuffix: null
+contentColumnType: string
+fieldGroup: 71dfacc3-c49c-4901-9376-bce3c6a72611 # Globals
+handle: footerNavigation
+instructions: null
+name: 'Footer Navigation'
+searchable: false
+settings:
+  maxBlocks: null
+  maxLevels: null
+  maxTopBlocks: 2
+  minBlocks: null
+  minLevels: null
+  minTopBlocks: null
+  propagationKeyFormat: null
+  propagationMethod: all
+translationKeyFormat: null
+translationMethod: site
+type: benf\neo\Field
