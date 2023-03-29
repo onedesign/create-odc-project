@@ -1,0 +1,9 @@
+{% from "_macros/links" import primaryNavigationLink %}
+
+<div class="fixed grid hidden justify-center pt-32 text-center inset-0 z-20" id="primary-nav-container">
+  <ul class="flex flex-col md:hidden space-y-4">
+    {% for item in primaryNavigationLinks %}
+      <li>{{ primaryNavigationLink(item.linkField, { class: 'text-2xl' }) }}</li>
+    {% endfor %}
+  </ul>
+</div>

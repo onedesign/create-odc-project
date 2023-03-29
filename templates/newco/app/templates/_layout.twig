@@ -11,15 +11,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
-<body>
-<a class="skip-link" href="#main-content">Skip to content</a>
+<body data-module="Navigation">
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <div aria-hidden="true" id="site-overlay" class="bg-white fixed inset-0 opacity-0 pointer-events-none transition-opacity duration-500 ease-in-out z-20"></div>
 
-{% include "_partials/header" %}
+  {% include "_partials/header" %}
 
-<main class="container p-4 mx-auto" id="main-content" tabindex="-1">
-  {% block content %}{% endblock %}
-</main>
+  <main class="container p-4 mx-auto" id="main-content" tabindex="-1">
+    {% block content %}{% endblock %}
+  </main>
 
-{% include "_partials/footer" %}
+  {% include "_partials/footer" %}
 </body>
 </html>
