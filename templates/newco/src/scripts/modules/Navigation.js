@@ -14,6 +14,11 @@ export default class PrimaryNav {
     this.options = { ...PrimaryNav.defaults, ...options };
     this.isVisible = false;
     this.mql = window.matchMedia('(min-width: 768px)');
+    this.container = document.getElementById(this.options.container);
+
+    if (!this.container) {
+      return;
+    }
 
     this.init();
   }
@@ -23,7 +28,6 @@ export default class PrimaryNav {
   }
 
   createChildren() {
-    this.container = document.getElementById(this.options.container);
     this.openTrigger = document.querySelector(this.options.openTrigger);
     this.overlay = document.getElementById(this.options.overlay);
     this.trigger = document.querySelector(this.options.trigger);
