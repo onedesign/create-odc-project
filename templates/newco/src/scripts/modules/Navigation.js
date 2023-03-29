@@ -1,127 +1,154 @@
 import * as focusTrap from 'focus-trap';
 import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
 
-import { MediaQueries } from '../util/MediaQueries';
-import { ResizeTransitions } from '../util/ResizeTransitions';
-
-export default class Navigation {
+export default class PrimaryNav {
   static defaults = {
-    container: '[data-nav-container]',
-    content: '[data-nav-content]',
-    trigger: '[data-nav-trigger]',
-    animated: false,
     breakpoint: 'MD',
+    container: 'primary-nav-container',
+    overlay: 'site-overlay',
+    trigger: '[data-nav-trigger]',
   };
 
   constructor(element, options) {
     this.element = element;
-    this.options = { ...Navigation.defaults, ...options };
-    this.isOpen = false;
+    this.options = { ...PrimaryNav.defaults, ...options };
+    this.isVisible = false;
+    this.mql = window.matchMedia('(min-width: 768px)');
 
     this.init();
   }
 
   init() {
-    this.createChildRefs().layout().enable();
-
-    return this;
+    this.createChildren().layout().enable();
   }
 
-  createChildRefs() {
-    this.container = this.element.querySelector(this.options.container);
-    this.content = this.element.querySelector(this.options.content);
-    this.trigger = this.element.querySelector(this.options.trigger);
-    this.textForShow = this.trigger.getAttribute('data-text-for-show');
-    this.textForHide = this.trigger.getAttribute('data-text-for-hide');
-    this.focusTrap = focusTrap.createFocusTrap(this.element, {});
-
-    return this;
-  }
-
-  enable() {
-    this.resetStatus();
-    this.trigger.addEventListener('click', this.handleTriggerClick);
-    ResizeTransitions.disable([this.container]);
-
-    MediaQueries[this.options.breakpoint].addEventListener('change', () => {
-      this.resetStatus();
-
-      if (this.isOpen && MediaQueries.MD.matches) {
-        this.close();
-      }
-    });
+  createChildren() {
+    this.container = document.getElementById(this.options.container);
+    this.openTrigger = document.querySelector(this.options.openTrigger);
+    this.overlay = document.getElementById(this.options.overlay);
+    this.trigger = document.querySelector(this.options.trigger);
+    this.openLabel = this.trigger.innerText;
+    this.dismissLabel = this.trigger.dataset.navDismissLabel;
+    this.focusTrap = focusTrap.createFocusTrap('header');
 
     return this;
   }
 
   layout() {
-    this.trigger.setAttribute('aria-label', this.textForShow);
+    this.trigger.setAttribute('aria-controls', this.options.container);
+    this.trigger.setAttribute('aria-expanded', false);
+
+    return this;
+  }
+
+  enable() {
+    document.addEventListener('keydown', this.handleKeydown);
+    this.trigger.addEventListener('click', this.handleTriggerClick);
+    this.mql.addEventListener('change', this.handleMediaQueryChange);
 
     return this;
   }
 
   handleKeydown = e => {
     if (e.keyCode === 27) {
-      if (!this.isOpen) {
+      if (!this.isVisible) {
         return;
       }
 
+      this.isOpen = !this.isVisible;
       this.close();
     }
   };
 
   handleTriggerClick = e => {
     e.preventDefault();
-    if (this.isOpen) {
+    if (this.isVisible) {
       this.close();
     } else {
       this.open();
     }
   };
 
-  open = () => {
-    this.isOpen = true;
-    if (this.options.animated) {
-      this.container.removeEventListener('transitionend', this.onTransitionEnd);
+  handleMediaQueryChange = () => {
+    if (this.mql.matches) {
+      this.close();
     }
-    this.container.setAttribute('aria-hidden', 'false');
+  };
+
+  open = () => {
+    this.isVisible = true;
     disableBodyScroll(this.container);
-    window.addEventListener('keyup', this.handleKeydown);
-    this.trigger.setAttribute('aria-expanded', 'true');
-    this.trigger.setAttribute('aria-label', this.textForHide);
+    this.trigger.setAttribute('aria-expanded', true);
+    this.overlay.classList.remove('opacity-0');
+    this.overlay.classList.add('opacity-10000');
+    this.trigger.innerText = this.dismissLabel;
+    this.enterFade(this.container);
     this.focusTrap.activate();
   };
 
   close = () => {
-    this.isOpen = false;
-    if (this.options.animated) {
-      this.container.addEventListener('transitionend', this.onTransitionEnd);
-    } else {
-      this.container.setAttribute('aria-hidden', 'true');
-    }
+    this.isVisible = false;
     enableBodyScroll(this.container);
-    window.removeEventListener('keyup', this.handleKeydown);
-    this.trigger.setAttribute('aria-expanded', 'false');
-    this.trigger.setAttribute('aria-label', this.textForShow);
+    this.trigger.setAttribute('aria-expanded', false);
+    this.trigger.innerText = this.openLabel;
+    this.exitFade(this.container);
     this.focusTrap.deactivate();
   };
 
-  onTransitionEnd = () => {
-    this.container.setAttribute('aria-hidden', 'true');
-    this.container.removeEventListener('transitionend', this.onTransitionEnd);
+  afterTransition = element => {
+    return new Promise(resolve => {
+      const duration =
+        Number(getComputedStyle(element).transitionDuration.replace('s', '')) *
+        1000;
+
+      setTimeout(() => {
+        resolve();
+      }, duration);
+    });
   };
 
-  resetStatus = () => {
-    if (MediaQueries[this.options.breakpoint].matches) {
-      this.container.classList.remove('header-navigation--small-screen');
-      this.container.setAttribute('aria-hidden', 'false');
-      this.trigger.classList.add('hidden');
-      this.trigger.setAttribute('aria-hidden', 'true');
-    } else if (!this.isOpen) {
-      this.container.classList.add('header-navigation--small-screen');
-      this.container.setAttribute('aria-hidden', 'true');
-      this.trigger.classList.remove('hidden');
-      this.trigger.setAttribute('aria-hidden', 'false');
-    }
+  enterFade = async element => {
+    element.classList.remove('hidden');
+    element.classList.add('delay-200');
+    element.classList.add('duration-700');
+    element.classList.add('ease-in-out');
+    element.classList.add('transition-opacity');
+    element.classList.add('opacity-0');
+
+    await this.getNextFrame();
+
+    element.classList.remove('opacity-0');
+    element.classList.add('opacity-100');
+
+    await this.afterTransition(element);
+
+    element.classList.remove('opacity-100');
+    element.classList.remove('delay-200');
+    element.classList.remove('duration-700');
+    element.classList.remove('ease-in-out');
+    element.classList.remove('transition-opacity');
+  };
+
+  exitFade = async element => {
+    element.classList.add('opacity-0');
+    element.classList.add('duration-150');
+    element.classList.add('ease-in-out');
+    element.classList.add('transition-opacity');
+
+    await this.afterTransition(element);
+
+    element.classList.add('hidden');
+    this.overlay.classList.remove('opacity-100');
+    this.overlay.classList.add('opacity-0');
+    element.classList.remove('opacity-0');
+    element.classList.remove('duration-150');
+    element.classList.remove('ease-in-out');
+    element.classList.remove('transition-opacity');
+  };
+
+  getNextFrame = () => {
+    return new Promise(resolve => {
+      requestAnimationFrame(resolve);
+    });
   };
 }

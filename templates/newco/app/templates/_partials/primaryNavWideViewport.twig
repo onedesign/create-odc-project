@@ -1,0 +1,7 @@
+{% from "_macros/links" import primaryNavigationLink %}
+
+<ul class="md:flex hidden space-x-8">
+  {% for item in primaryNavigationLinks %}
+    <li>{{ primaryNavigationLink(item.linkField) }}</li>
+  {% endfor %}
+</ul>

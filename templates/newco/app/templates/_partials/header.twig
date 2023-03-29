@@ -1,31 +1,21 @@
 {% from "_macros/links" import primaryNavigationLink %}
 
 {% set headerNavigation = craft.entries().section('headerNavigation').one() %}
+{% set primaryNavigationLinks = headerNavigation.primaryNavigation.collect() %}
 
 <header id="header">
-  <div class="container flex flex-col md:flex-row md:justify-between mx-auto p-4">
+  <div class="container flex justify-between mx-auto p-4">
     <div>
       <a href="{{ siteUrl }}">{{ siteName }}</a>
     </div>
 
-    {% if headerNavigation.primaryNavigation | length %}
-      <div data-module="Navigation" data-module-options='{"animated": true}'>
-        <button
-          aria-controls="site-menu"
-          aria-expanded="false"
-          data-text-for-hide="{{ 'Close navigation menu.'|t }}"
-          data-text-for-show="{{ 'Open navigation menu.'|t }}"
-          data-nav-trigger>{{ 'Menu'|t }}
-        </button>
-
-        <nav aria-label="Main menu" data-nav-container>
-          <ul class="flex space-x-8" data-nav-content>
-            {% for item in headerNavigation.primaryNavigation.collect() %}
-              <li>{{ primaryNavigationLink(item.linkField) }}</li>
-            {% endfor %}
-          </ul>
-        </nav>
-      </div>
+    {% if primaryNavigationLinks | length %}
+      <nav aria-labelledby="primary-nav-label" data-nav-container>
+        <button class="md:hidden relative z-30" data-nav-trigger data-nav-dismiss-label="{{ 'Close'|t }}">{{ 'Menu'|t }}</button>
+        <span class="sr-only" id="primary-nav-label">{{ 'Primary Navigation'|t }}</span>
+        {% include "_partials/primaryNavSmallViewport" with { primaryNavigationLinks: primaryNavigationLinks } only %}
+        {% include "_partials/primaryNavWideViewport" with { primaryNavigationLinks: primaryNavigationLinks } only %}
+      </nav>
     {% endif %}
   </div>
 </header>
