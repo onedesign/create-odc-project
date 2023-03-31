@@ -41,7 +41,19 @@ fieldLayouts:
             uid: 61eee052-8beb-44f8-bc79-2f69534af0ae
             userCondition: null
             warning: null
-            width: 50
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 91a6ed4b-9803-4a8c-bdef-23c0c45053d3 # MIddle Name
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 62d11c6d-b743-4215-9ea7-db78f281bcd9
+            userCondition: null
+            warning: null
+            width: 100
           -
             elementCondition: null
             fieldUid: 6ed4d251-7477-4ae1-8e54-d5d1ba1f81b6 # Last Name
@@ -53,7 +65,7 @@ fieldLayouts:
             uid: 9e945767-fa61-46f8-8be7-8badcd7edcca
             userCondition: null
             warning: null
-            width: 50
+            width: 100
           -
             elementCondition: null
             fieldUid: 7be56c88-85db-4d0b-b971-0e0efde359e5 # Suffix
@@ -65,7 +77,7 @@ fieldLayouts:
             uid: d21d16c4-e574-40f7-8ec7-e808dae6e492
             userCondition: null
             warning: null
-            width: 25
+            width: 100
           -
             elementCondition: null
             fieldUid: aadd32f4-8806-4f36-bc13-fc6e1ea56461 # Job Title
@@ -77,7 +89,7 @@ fieldLayouts:
             uid: 147d6035-41e6-4e0c-aea7-e26109fc1b66
             userCondition: null
             warning: null
-            width: 75
+            width: 100
           -
             elementCondition: null
             fieldUid: dad408b6-3f24-4cdf-b223-8af7fdeb269b # Portrait
@@ -140,6 +152,6 @@ hasTitleField: false
 name: Full
 section: 5af4e083-8f1d-423a-b01d-b58f40719cd0 # Team
 sortOrder: 1
-titleFormat: '{{firstName}} {{lastName}}'
+titleFormat: '{{firstName}} {{ middleName }} {{lastName}}'
 titleTranslationKeyFormat: null
 titleTranslationMethod: site
