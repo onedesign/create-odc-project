@@ -39,13 +39,13 @@ fields:
       defaultText: ''
       enableAllLinkTypes: false
       enableAriaLabel: false
-      enableElementCache: false
+      enableElementCache: true
       enableTitle: false
       typeSettings:
         asset:
           allowCrossSiteLink: false
           allowCustomQuery: false
-          enabled: true
+          enabled: false
           sources: '*'
         category:
           allowCrossSiteLink: false
@@ -59,7 +59,7 @@ fields:
         email:
           allowAliases: false
           disableValidation: false
-          enabled: true
+          enabled: false
         entry:
           allowCrossSiteLink: false
           allowCustomQuery: false
@@ -71,7 +71,7 @@ fields:
         tel:
           allowAliases: false
           disableValidation: false
-          enabled: true
+          enabled: false
         url:
           allowAliases: false
           disableValidation: false

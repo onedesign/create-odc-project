@@ -5,6 +5,7 @@ Params:
 - config: An options object.
     - prefix
     - firstName
+    - middleName
     - lastName
     - suffix
 
@@ -13,11 +14,12 @@ Usage:
 {{ displayName(config) }}
 ============================================================================ #}
 {%- macro displayName(config = {}) -%}
-  {% set fn = config.firstName ?? null %}
-  {% set ln = config.lastName ?? null %}
-  {% set suf = config.suffix ?? null %}
-  {% if fn and ln %}
-    {{ "#{fn} #{ln}" ~ (suf ? ", #{suf}") }}
+  {% set firstName = config.firstName ?? null %}
+  {% set lastName = config.lastName ?? null %}
+  {% set middleName = config.middleName ?? null %}
+  {% set suffix = config.suffix ?? null %}
+  {% if firstName and lastName %}
+    {{ "#{firstName} " ~ (middleName ? "#{middleName} ") ~ lastName ~ (suffix ? ", #{suffix}") }}
   {% endif %}
 {%- endmacro displayName -%}
 
