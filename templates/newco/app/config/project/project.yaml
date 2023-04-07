@@ -1,4 +1,4 @@
-dateModified: 1680885533
+dateModified: 1680903495
 elementSources:
   craft\elements\Entry:
     -
@@ -222,10 +222,6 @@ meta:
     fee9df4a-f8dd-4224-a1e2-a58995ca105c: 'Hero Media' # Hero Media
     ff57f8ac-faa2-4b05-a010-f86b72b8a2f2: 'Text Stack' # Text Stack
 plugins:
-  dumper:
-    edition: standard
-    enabled: true
-    schemaVersion: 1.0.0
   formie:
     edition: standard
     enabled: true
@@ -407,6 +403,7 @@ plugins:
   hyper:
     edition: standard
     enabled: true
+    licenseKey: T23CGNFGHVY7XGYG6HN657BF
     schemaVersion: 1.0.0
   imager-x:
     edition: pro
@@ -441,10 +438,6 @@ plugins:
     edition: standard
     enabled: true
     schemaVersion: 1.0.0
-  typedlinkfield:
-    edition: standard
-    enabled: true
-    schemaVersion: 2.0.0
   typogrify:
     edition: standard
     enabled: true
