@@ -53,7 +53,7 @@
   {% set textAlignment = 'text-left' %}
 {% endswitch %}
 
-<div {{ asset.kind == 'video' ? 'data-module="AmbientVideo"' : '' }} class="grid [grid-template-areas:'hero'] [&>*]:[grid-area:hero] h-[70vh] max-h-[600px] {{ position.x }} {{ position.y }}">
+<div {{ asset and asset.kind == 'video'? 'data-module="AmbientVideo"' : '' }} class="grid [grid-template-areas:'hero'] [&>*]:[grid-area:hero] h-[70vh] max-h-[600px] {{ position.x }} {{ position.y }}">
   <div class="max-w-prose p-10 z-10 {{ textAlignment }}">
     {% if childBlocks | length %}
       {% for childBlock in childBlocks %}
