@@ -15,8 +15,8 @@ Usage:
     'hover:underline',
   ] %}
 
-  {% set attributes = field.getRawLinkAttributes() ?? {} %}
-  {% set text = field.getCustomText() %}
+  {% set attributes = field.getLinkAttributes() ?? {} %}
+  {% set text = field.text %}
 
   {% if config.class is defined %}
     {% set cssClasses = cssClasses | merge(config.class | split(' ')) %}
@@ -79,28 +79,28 @@ Usage:
   {% set textCss = [] %}
 
   {% switch type %}
-    {% case 'block-cta' %}
-      {% set anchorCss = anchorCss | merge([
-        'block',
-        'bg-gray-200',
-        'duration-300',
-        'ease-in-out',
-        'hover:bg-black',
-        'hover:text-white',
-        'hover:underline',
-        'transition-colors',
-        'p-4',
-      ]) %}
+  {% case 'block-cta' %}
+    {% set anchorCss = anchorCss | merge([
+      'block',
+      'bg-gray-200',
+      'duration-300',
+      'ease-in-out',
+      'hover:bg-black',
+      'hover:text-white',
+      'hover:underline',
+      'transition-colors',
+      'p-4',
+    ]) %}
   {% endswitch %}
 
-  {% set attributes = field.getRawLinkAttributes() ?? {} %}
+  {% set attributes = field.getLinkAttributes() ?? {} %}
 
   {% set html %}
     <span class="{{ textCss | join(' ') }}">
       {%- if text -%}
         {{ text }}
       {%- else -%}
-        {{ field.getCustomText(field.getIntrinsicText()) }}
+        {{ field.text }}
       {%- endif -%}
     </span>
     {% if icon %}
@@ -124,21 +124,6 @@ Usage:
   }) %}
 
   {% set attributes = attributes | merge(config) %}
-
-  {# Current page links #}
-  {% if attributes.href in craft.app.request.absoluteUrl %}
-    {% if attributes.aria is defined %}
-      {% set attributes = attributes | merge({
-        aria: attributes.aria | merge({ current: 'page' })
-      }) %}
-    {% else %}
-      {% set attributes = attributes | merge({
-        aria: {
-          current: 'page'
-        }
-      }) %}
-    {% endif %}
-  {% endif %}
 
   {# Return: #}
   {{ tag('a', attributes) }}

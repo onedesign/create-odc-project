@@ -1,6 +1,6 @@
 <article>
   {% if item.articleLink %}
-    <a{{ item.articleLink.getLinkAttributes() }}>
+    <a{{ item.articleLink.getLinkAttributes({}, true) }}>
       {{ item.title | typogrify(true) }}
     </a>
   {% endif %}
