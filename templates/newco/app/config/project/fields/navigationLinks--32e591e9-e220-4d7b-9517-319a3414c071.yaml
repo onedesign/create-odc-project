@@ -1,12 +1,12 @@
 columnSuffix: null
 contentColumnType: string
 fieldGroup: 71dfacc3-c49c-4901-9376-bce3c6a72611 # Globals
-handle: primaryNavigation
+handle: navigationLinks
 instructions: null
-name: 'Primary Navigation'
+name: 'Navigation Links'
 searchable: false
 settings:
-  contentTable: '{{%matrixcontent_primarynavigation}}'
+  contentTable: '{{%matrixcontent_navigationlinks}}'
   maxBlocks: null
   minBlocks: null
   propagationKeyFormat: null

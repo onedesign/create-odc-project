@@ -1,7 +1,7 @@
 {% from "_macros/links" import primaryNavigationLink %}
 
 {% set headerNavigation = craft.entries().section('headerNavigation').one() %}
-{% set primaryNavigationLinks = headerNavigation.primaryNavigation.collect() %}
+{% set primaryNavigationLinks = headerNavigation.navigationLinks.collect() %}
 
 <header id="header">
   <div class="container flex justify-between mx-auto p-4">
