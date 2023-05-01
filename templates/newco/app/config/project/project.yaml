@@ -1,4 +1,4 @@
-dateModified: 1680903495
+dateModified: 1682438005
 elementSources:
   craft\elements\Entry:
     -
@@ -146,7 +146,7 @@ meta:
     012aad9f-4a4f-4938-a934-87afc923743f: 'HTML Element' # HTML Element
     15d9d7cd-ae8a-4ffe-b697-1e53a28b1a9e: 'Page Content' # Page Content
     17b1272f-f374-4f05-9e0e-c8bb27b51854: 'Plain Text' # Plain Text
-    32e591e9-e220-4d7b-9517-319a3414c071: 'Primary Navigation' # Primary Navigation
+    32e591e9-e220-4d7b-9517-319a3414c071: 'Navigation Links' # Navigation Links
     032f18e6-4141-4a00-81f6-57cc3f8a1d98: Link # Link
     40cc59c2-c66c-4c7b-907d-70001b3c89f8: 'Text Variant' # Text Variant
     40d07393-8258-4bcc-85e5-52abc4a0f37f: 'Social Links' # Social Links
