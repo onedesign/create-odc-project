@@ -1,7 +1,7 @@
 childBlocks:
+  - cta
   - primaryText
   - secondaryText
-  - cta
 conditions: null
 description: ''
 enabled: true
@@ -18,5 +18,5 @@ minBlocks: 0
 minChildBlocks: 0
 minSiblingBlocks: 0
 name: 'Text Stack'
-sortOrder: 5
+sortOrder: 15
 topLevel: false

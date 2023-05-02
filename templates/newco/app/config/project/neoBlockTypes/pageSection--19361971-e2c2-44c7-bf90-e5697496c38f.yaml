@@ -1,10 +1,11 @@
 childBlocks:
-  - hero
   - contact
+  - hero
+  - jobsIndex
   - longFormContent
-  - pageCta
   - newsIndex
   - newsList
+  - pageCta
   - teamList
 conditions: null
 description: ''

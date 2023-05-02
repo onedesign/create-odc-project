@@ -1,4 +1,4 @@
-dateModified: 1682438005
+dateModified: 1683060221
 elementSources:
   craft\elements\Entry:
     -
@@ -14,6 +14,27 @@ elementSources:
         - author
         - link
       type: native
+    -
+      condition:
+        class: craft\elements\conditions\entries\EntryCondition
+        conditionRules:
+          -
+            class: craft\elements\conditions\entries\SectionConditionRule
+            operator: in
+            uid: d2ac44d1-eccc-46c5-9bdd-260800553f3d
+            values:
+              - 312797a8-7d21-4043-a321-e10afb5b81c8 # Footer Navigation
+              - 4162fae7-fcbb-4f90-b092-5beb4c414aa9 # Global Contact
+              - 4c695998-be6c-4de8-aeea-c072d1086fc0 # Header Navigation
+        elementType: craft\elements\Entry
+        fieldContext: global
+      defaultSort:
+        - title
+        - asc
+      key: 'custom:184421dd-3ec3-4dc5-ae66-37ebaccad16e'
+      label: Globals
+      tableAttributes: '-'
+      type: custom
     -
       defaultSort:
         - title
@@ -42,6 +63,9 @@ elementSources:
       heading: Structures
       type: heading
     -
+      key: 'section:6b976f60-140d-4a53-afda-c2eddb5b1767' # Jobs
+      type: native
+    -
       defaultSort:
         - structure
         - asc
@@ -68,26 +92,8 @@ elementSources:
       heading: ''
       type: heading
     -
-      condition:
-        class: craft\elements\conditions\entries\EntryCondition
-        conditionRules:
-          -
-            class: craft\elements\conditions\entries\SectionConditionRule
-            operator: in
-            uid: d2ac44d1-eccc-46c5-9bdd-260800553f3d
-            values:
-              - 312797a8-7d21-4043-a321-e10afb5b81c8 # Footer Navigation
-              - 4162fae7-fcbb-4f90-b092-5beb4c414aa9 # Global Contact
-              - 4c695998-be6c-4de8-aeea-c072d1086fc0 # Header Navigation
-        elementType: craft\elements\Entry
-        fieldContext: global
-      defaultSort:
-        - title
-        - asc
-      key: 'custom:184421dd-3ec3-4dc5-ae66-37ebaccad16e'
-      label: Globals
-      tableAttributes: '-'
-      type: custom
+      heading: ''
+      type: heading
 email:
   fromEmail: dev@onedesigncompany.com
   fromName: 'ODC Lean Starter'
@@ -122,6 +128,7 @@ meta:
     1e050e3c-5e8a-46ce-90eb-029c23ee5edd: Telephone # Telephone
     2bbe8658-038e-4e92-9f1a-17f9a3b70241: Simple # Simple
     2fe5c407-798b-4084-a753-ec6ec2fcc9a3: External # External
+    3a6bf17a-26d2-457a-91ef-da060e50a83e: Default # Default
     3dffb9b1-3388-4e19-8e6d-51d718fd77f6: Internal # Internal
     3e4a1400-6cd4-4e99-a37c-2c4fdcfad8fa: 'Rich Text Full' # Rich Text Full
     3ecee518-f3cf-4e25-a61c-94abb7eba772: Page # Page
@@ -134,6 +141,7 @@ meta:
     5ed2c97a-bd4c-45a7-8ebb-6943daf60780: Link # Link
     5edc36a0-b4bb-41e7-9dce-2c369b4b58b2: 'Section ID' # Section ID
     5fa8d016-75eb-4e89-9452-459a8de97b18: 'Primary Text' # Primary Text
+    6b976f60-140d-4a53-afda-c2eddb5b1767: Jobs # Jobs
     6ed4d251-7477-4ae1-8e54-d5d1ba1f81b6: 'Last Name' # Last Name
     06f01cd7-dcd0-428a-840a-522aa8ecb4fb: Team # Team
     7b2005f1-de18-4004-b44d-e7ed18ae73c5: 'ODC Lean Starter' # ODC Lean Starter
@@ -181,6 +189,7 @@ meta:
     38316d6a-1279-411b-9ba7-efc6af5ef122: 'ODC Lean Starter' # ODC Lean Starter
     54988c20-668a-46cb-b87c-ef89744d5d57: 'HTML Element' # HTML Element
     312797a8-7d21-4043-a321-e10afb5b81c8: 'Footer Navigation' # Footer Navigation
+    04085894-ffb9-4f9d-984a-0a7f282be8e8: 'Job Link' # Job Link
     5484724d-dabb-498b-afc5-1240dc13e768: Email # Email
     19361971-e2c2-44c7-bf90-e5697496c38f: Section # Section
     41517759-8a0b-49c4-9527-89908414815f: 'Heading Elements' # Heading Elements
@@ -195,8 +204,8 @@ meta:
     b61420f2-9469-421e-b1c9-1c5e1c892fc9: 'Text Size' # Text Size
     b2037343-3108-472d-bcec-61e3d491b7c6: 'Horizontal Alignment' # Horizontal Alignment
     bdd5f7dd-ae92-4cb6-8a42-426738ad387d: 'Team List' # Team List
-    be3ecd43-e2ec-4d3c-8efb-9473fa1c482d: 'Publication Date' # Publication Date
     bed700a0-63ad-4807-807a-023f3a671a0c: 'Text Variant' # Text Variant
+    c5d51cb4-080e-4cd9-938d-094ba302df57: 'Jobs Index' # Jobs Index
     c5e34457-d67a-4ed0-93d9-b080918fbf8a: Contact # Contact
     c9613bf0-4ba1-4239-a80d-cb35aa56d749: 'First Name' # First Name
     cb22d843-e137-4dd1-8d5d-1e606ab4d6c5: Navigation # Navigation

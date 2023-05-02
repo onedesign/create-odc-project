@@ -36,5 +36,5 @@ minBlocks: 0
 minChildBlocks: 0
 minSiblingBlocks: 0
 name: 'Article Text'
-sortOrder: 3
+sortOrder: 2
 topLevel: false
