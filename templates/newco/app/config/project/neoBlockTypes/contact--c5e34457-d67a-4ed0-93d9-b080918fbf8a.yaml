@@ -1,6 +1,6 @@
 childBlocks:
-  - textStack
   - formReference
+  - textStack
 conditions:
   craft\elements\Entry:
     class: craft\elements\conditions\entries\EntryCondition
@@ -29,5 +29,5 @@ minBlocks: 0
 minChildBlocks: 0
 minSiblingBlocks: 0
 name: Contact
-sortOrder: 4
+sortOrder: 3
 topLevel: false

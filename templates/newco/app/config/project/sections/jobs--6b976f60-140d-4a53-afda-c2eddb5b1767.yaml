@@ -1,0 +1,27 @@
+defaultPlacement: end
+enableVersioning: true
+handle: jobs
+name: Jobs
+previewTargets:
+  -
+    __assoc__:
+      -
+        - label
+        - 'Primary entry page'
+      -
+        - urlFormat
+        - '{url}'
+      -
+        - refresh
+        - '1'
+propagationMethod: all
+siteSettings:
+  7b2005f1-de18-4004-b44d-e7ed18ae73c5: # ODC Lean Starter
+    enabledByDefault: true
+    hasUrls: false
+    template: null
+    uriFormat: null
+structure:
+  maxLevels: 1
+  uid: 4d8d9986-4853-40a7-ad95-7ed2faf3a331
+type: structure

@@ -1,0 +1,52 @@
+childBlocks: null
+conditions: null
+description: ''
+enabled: true
+field: 15d9d7cd-ae8a-4ffe-b697-1e53a28b1a9e # Page Content
+fieldLayouts:
+  78bbc0ca-b379-47d9-a619-154dee561534:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: 50fed80a-0ff9-4dd4-9d18-1efc8e4c55f4 # Limit
+            instructions: null
+            label: 'Number of Items to Display'
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: ae8b9b09-0960-4e95-8994-ab895e665961
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: dd262531-f35e-456a-ae1f-658ac6f915e9 # Paginate
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 03804c8b-7d1c-4ac9-aa41-d104ba83712e
+            userCondition: null
+            warning: null
+            width: 100
+        name: Configuration
+        uid: 15472776-d73f-40df-9795-e329fd1aa560
+        userCondition: null
+group: null
+groupChildBlockTypes: true
+handle: jobsIndex
+icon: null
+ignorePermissions: true
+maxBlocks: 0
+maxChildBlocks: 0
+maxSiblingBlocks: 0
+minBlocks: 0
+minChildBlocks: 0
+minSiblingBlocks: 0
+name: 'Jobs Index'
+sortOrder: 8
+topLevel: false

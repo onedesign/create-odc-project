@@ -23,13 +23,6 @@ fieldLayouts:
         elements:
           -
             elementCondition: null
-            template: _cp/block-description.twig
-            type: craft\fieldlayoutelements\Template
-            uid: a09d5012-da7c-43de-8f65-f2b673d44f37
-            userCondition: null
-            width: 100
-          -
-            elementCondition: null
             fieldUid: 9c0c57b8-e1c4-47ba-bb5a-79dd2abdbae5 # News Item Reference
             instructions: null
             label: null
