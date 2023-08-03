@@ -438,7 +438,7 @@ plugins:
     edition: standard
     enabled: true
     licenseKey: U87M6V3BB5T40YKYFD0WBYVW
-    schemaVersion: 3.0.11
+    schemaVersion: 3.0.12
   servd-asset-storage:
     edition: standard
     enabled: true
