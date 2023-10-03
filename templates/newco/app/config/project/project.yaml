@@ -456,7 +456,7 @@ system:
   live: true
   name: 'ODC Lean Starter'
   retryDuration: null
-  schemaVersion: 4.4.0.4
+  schemaVersion: 4.5.3.0
   timeZone: America/Los_Angeles
 users:
   allowPublicRegistration: false
