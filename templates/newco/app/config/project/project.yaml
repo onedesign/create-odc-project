@@ -1,8 +1,7 @@
-dateModified: 1683060221
+dateModified: 1696453413
 elementSources:
   craft\elements\Entry:
-    -
-      defaultSort:
+    - defaultSort:
         - postDate
         - desc
       disabled: false
@@ -14,12 +13,10 @@ elementSources:
         - author
         - link
       type: native
-    -
-      condition:
+    - condition:
         class: craft\elements\conditions\entries\EntryCondition
         conditionRules:
-          -
-            class: craft\elements\conditions\entries\SectionConditionRule
+          - class: craft\elements\conditions\entries\SectionConditionRule
             operator: in
             uid: d2ac44d1-eccc-46c5-9bdd-260800553f3d
             values:
@@ -35,8 +32,7 @@ elementSources:
       label: Globals
       tableAttributes: '-'
       type: custom
-    -
-      defaultSort:
+    - defaultSort:
         - title
         - asc
       disabled: false
@@ -44,11 +40,9 @@ elementSources:
       tableAttributes:
         - link
       type: native
-    -
-      heading: Channels
+    - heading: Channels
       type: heading
-    -
-      defaultSort:
+    - defaultSort:
         - postDate
         - desc
       disabled: false
@@ -59,14 +53,11 @@ elementSources:
         - type
         - link
       type: native
-    -
-      heading: Structures
+    - heading: Structures
       type: heading
-    -
-      key: 'section:6b976f60-140d-4a53-afda-c2eddb5b1767' # Jobs
+    - key: 'section:6b976f60-140d-4a53-afda-c2eddb5b1767' # Jobs
       type: native
-    -
-      defaultSort:
+    - defaultSort:
         - structure
         - asc
       disabled: false
@@ -76,8 +67,7 @@ elementSources:
         - revisionCreator
         - link
       type: native
-    -
-      defaultSort:
+    - defaultSort:
         - structure
         - asc
       disabled: false
@@ -88,11 +78,9 @@ elementSources:
         - type
         - link
       type: native
-    -
-      heading: ''
+    - heading: ''
       type: heading
-    -
-      heading: ''
+    - heading: ''
       type: heading
 email:
   fromEmail: dev@onedesigncompany.com
@@ -234,148 +222,96 @@ plugins:
   formie:
     edition: standard
     enabled: true
-    licenseKey: XK2UE9OWQOL3WGILVRZ1BR9H
+    licenseKey: 5501KA9K2KZI2PTJX85ID167
     schemaVersion: 2.0.10
     settings:
       ajaxTimeout: 10
       alertEmails: null
       captchas:
         __assoc__:
-          -
-            - recaptcha
-            -
-              __assoc__:
-                -
-                  - type
+          - - recaptcha
+            - __assoc__:
+                - - type
                   - verbb\formie\integrations\captchas\Recaptcha
-                -
-                  - enabled
+                - - enabled
                   - '0'
-                -
-                  - saveSpam
+                - - saveSpam
                   - true
-                -
-                  - settings
-                  -
-                    __assoc__:
-                      -
-                        - handle
+                - - settings
+                  - __assoc__:
+                      - - handle
                         - recaptcha
-                      -
-                        - type
+                      - - type
                         - v3
-                      -
-                        - size
+                      - - size
                         - normal
-                      -
-                        - theme
+                      - - theme
                         - light
-                      -
-                        - badge
+                      - - badge
                         - bottomright
-                      -
-                        - language
+                      - - language
                         - en
-                      -
-                        - minScore
+                      - - minScore
                         - 0.5
-                      -
-                        - scriptLoadingMethod
+                      - - scriptLoadingMethod
                         - asyncDefer
-          -
-            - hcaptcha
-            -
-              __assoc__:
-                -
-                  - type
+          - - hcaptcha
+            - __assoc__:
+                - - type
                   - verbb\formie\integrations\captchas\Hcaptcha
-                -
-                  - enabled
+                - - enabled
                   - '0'
-                -
-                  - saveSpam
+                - - saveSpam
                   - true
-                -
-                  - settings
-                  -
-                    __assoc__:
-                      -
-                        - handle
+                - - settings
+                  - __assoc__:
+                      - - handle
                         - hcaptcha
-                      -
-                        - size
+                      - - size
                         - normal
-                      -
-                        - theme
+                      - - theme
                         - light
-                      -
-                        - language
+                      - - language
                         - en
-                      -
-                        - minScore
+                      - - minScore
                         - 0.5
-                      -
-                        - scriptLoadingMethod
+                      - - scriptLoadingMethod
                         - asyncDefer
-          -
-            - duplicate
-            -
-              __assoc__:
-                -
-                  - type
+          - - duplicate
+            - __assoc__:
+                - - type
                   - verbb\formie\integrations\captchas\Duplicate
-                -
-                  - enabled
+                - - enabled
                   - '1'
-                -
-                  - saveSpam
+                - - saveSpam
                   - true
-                -
-                  - settings
-                  -
-                    __assoc__:
-                      -
-                        - handle
+                - - settings
+                  - __assoc__:
+                      - - handle
                         - duplicate
-          -
-            - honeypot
-            -
-              __assoc__:
-                -
-                  - type
+          - - honeypot
+            - __assoc__:
+                - - type
                   - verbb\formie\integrations\captchas\Honeypot
-                -
-                  - enabled
+                - - enabled
                   - '1'
-                -
-                  - saveSpam
+                - - saveSpam
                   - true
-                -
-                  - settings
-                  -
-                    __assoc__:
-                      -
-                        - handle
+                - - settings
+                  - __assoc__:
+                      - - handle
                         - honeypot
-          -
-            - javascript
-            -
-              __assoc__:
-                -
-                  - type
+          - - javascript
+            - __assoc__:
+                - - type
                   - verbb\formie\integrations\captchas\Javascript
-                -
-                  - enabled
+                - - enabled
                   - '1'
-                -
-                  - saveSpam
+                - - saveSpam
                   - true
-                -
-                  - settings
-                  -
-                    __assoc__:
-                      -
-                        - handle
+                - - settings
+                  - __assoc__:
+                      - - handle
                         - javascript
       defaultDateDisplayType: calendar
       defaultDateTime: null
@@ -412,17 +348,17 @@ plugins:
   hyper:
     edition: standard
     enabled: true
-    licenseKey: T23CGNFGHVY7XGYG6HN657BF
+    licenseKey: 6UF1TQTVGRK03GPWFG6NIK0I
     schemaVersion: 1.0.0
   imager-x:
     edition: pro
     enabled: true
-    licenseKey: KB7CUJYUSHCZBLUS7YPJDXJK
+    licenseKey: XE9IB39HNEKQTX5AQUCMCXF3
     schemaVersion: 4.0.0
   neo:
     edition: standard
     enabled: true
-    licenseKey: L3T61FSYY9TRVBG4TCTTIGCP
+    licenseKey: 9LYX2AWGF2ZK4GANA53OF5E7
     schemaVersion: 3.6.2
     settings:
       blockTypeIconSources: '*'
@@ -437,7 +373,7 @@ plugins:
   seomatic:
     edition: standard
     enabled: true
-    licenseKey: U87M6V3BB5T40YKYFD0WBYVW
+    licenseKey: 86PG4YA2F83TKKQ85749XCLN
     schemaVersion: 3.0.12
   servd-asset-storage:
     edition: standard
