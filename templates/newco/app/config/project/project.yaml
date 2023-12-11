@@ -222,7 +222,7 @@ plugins:
   formie:
     edition: standard
     enabled: true
-    licenseKey: 5501KA9K2KZI2PTJX85ID167
+    licenseKey: 
     schemaVersion: 2.0.10
     settings:
       ajaxTimeout: 10
@@ -348,17 +348,17 @@ plugins:
   hyper:
     edition: standard
     enabled: true
-    licenseKey: 6UF1TQTVGRK03GPWFG6NIK0I
+    licenseKey: 
     schemaVersion: 1.0.0
   imager-x:
     edition: pro
     enabled: true
-    licenseKey: XE9IB39HNEKQTX5AQUCMCXF3
+    licenseKey: 
     schemaVersion: 4.0.0
   neo:
     edition: standard
     enabled: true
-    licenseKey: 9LYX2AWGF2ZK4GANA53OF5E7
+    licenseKey: 
     schemaVersion: 3.6.2
     settings:
       blockTypeIconSources: '*'
@@ -373,7 +373,7 @@ plugins:
   seomatic:
     edition: standard
     enabled: true
-    licenseKey: 86PG4YA2F83TKKQ85749XCLN
+    licenseKey: 
     schemaVersion: 3.0.12
   servd-asset-storage:
     edition: standard
