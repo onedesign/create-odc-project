@@ -9,8 +9,8 @@
     "lint": "eslint ./src --fix"
   },
   "engines": {
-    "node": ">= 16.17.1",
-    "npm": ">= 8.15.0"
+    "node": ">= 20.10.0",
+    "npm": ">= 10.2.3"
   },
   "repository": {
     "type": "git",
@@ -25,8 +25,6 @@
   "devDependencies": {
     "@babel/eslint-parser": "^7.19.1",
     "@rollup/plugin-eslint": "^9.0.3",
-    "@tailwindcss/aspect-ratio": "^0.4.2",
-    "@tailwindcss/typography": "^0.5.9",
     "autoprefixer": "^10.4.12",
     "dotenv": "^16.0.3",
     "eslint": "^8.24.0",

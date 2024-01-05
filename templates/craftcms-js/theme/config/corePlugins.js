@@ -1,5 +1,3 @@
-const corePlugins = {
-  aspectRatio: false,
-};
+const corePlugins = {};
 
 module.exports = corePlugins;

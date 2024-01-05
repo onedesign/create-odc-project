@@ -1,7 +1,3 @@
-const safelist = [
-  {
-    pattern: /^(aspect-).+/,
-  },
-];
+const safelist = [];
 
 module.exports = safelist;
