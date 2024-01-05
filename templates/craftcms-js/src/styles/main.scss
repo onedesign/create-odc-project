@@ -4,15 +4,14 @@
 @tailwind utilities;
 
 // Configuration
-@import "variables";
+@import 'variables';
 
 // Base
-@import "base/html";
-@import "base/demo";
-@import "base/webfonts";
+@import 'base/html';
+@import 'base/webfonts';
 
 // Components
-@import "components/skip-link";
+@import 'components/skip-link';
 
 // Utilities
-@import "utilities";
+@import 'utilities';

@@ -1,6 +1,3 @@
-const plugins = [
-  require('@tailwindcss/aspect-ratio'),
-  require('@tailwindcss/typography'),
-];
+const plugins = [];
 
 module.exports = plugins;
