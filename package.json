@@ -1,6 +1,6 @@
 {
   "name": "@onedesign/create-odc-project",
-  "version": "1.6.6",
+  "version": "2.0.0",
   "description": "A Node command line tool for scaffolding common ODC projects",
   "main": "dist/cli.js",
   "type": "module",
